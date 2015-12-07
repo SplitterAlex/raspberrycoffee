@@ -1,0 +1,289 @@
+
+<div class="container">
+    
+<div class="row vertical-align">
+    
+    <div class="col-sm-7">
+        <h2>Welcome</h2>
+        
+        If you are not registered yet and you are in possession of a valid
+        <a href="http://www.uibk.ac.at/zid/"> ZID account</a>,
+         type your credentials in the 'Sign In here'-form, press 'Sign In' and
+        you will get registered.
+        <br><br>
+        
+        <p class="alert alert-info">
+            Hint: <small>We don't store your password. If you forgot your ZID password, please
+            contact the ZID, or visit the <a href="http://www.uibk.ac.at/zid/faq/passwort.html" class="alert-link"> FAQ</a>.</small>
+        </p>
+       
+        <hr style="background:#000000; border:0; height:1px" />
+       
+        If you don't have a ZID account, there's a possibility to register
+        a dedicated user account.
+        <i class="fa fa-angle-double-right"></i>
+        <button class="btn btn-lg btn-info btn-xs" type="button" id="modalButton" data-toggle="modal" data-target="#signupModal">Register an account</button>
+        <i class="fa fa-angle-double-left"></i>
+        <br><br>
+        <p class="alert alert-info">
+            Hint: <small>If you forgot your credentials, shame on you and contact your admin. </small>
+        </p>
+        
+    </div>
+    
+    <div class="col-sm-5">
+        <div class="hiddenDiv"><h2>Hidden</h2></div>
+        <div class="alert alert-warning text-center" role="alert" ng-show="tokenExpired">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            <strong>Your access token expired.<br> Please sign in again.</strong>
+        </div>
+        <div class="alert alert-success text-center" role="alert" ng-show="signupSuccess">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Signup Success:</span>
+            <strong>Registration was successfull!<br> Use the formular beneath to sign in.</strong>
+        </div>
+        <div class="well">
+            
+            <form class="form-signin" name="form" ng-submit="signin()" novalidate>
+                <h4>Sign In here</h4>
+                            
+                <label for="inputUser" class="sr-only">Username</label>
+                <input type="text"
+                        name="user"
+                        ng-model="user.username"
+                        id="inputUser"
+                        class="form-control"
+                        placeholder="Username"
+                        ng-maxlength=20
+                        required autofocus>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password"
+                        name="password"
+                        ng-model="user.password"
+                        id="inputPassword"
+                        class="form-control"
+                        placeholder="Password"
+                        ng-maxlength=100
+                        required>
+                                
+
+                <div class="alert alert-danger" role="alert" ng-show="signinError">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    {{errMessage}}! <br/>
+                </div>
+                <div class="alert alert-warning" role="alert" ng-show="form.user.$error.maxlength || form.password.$error.maxlength">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Username is too long! Max 20 Characters allowed.
+                </div>
+                <button class="btn btn-lg btn-primary btn-block"
+                        id="signinButton"
+                        ng-disabled="!form.$valid"
+                        type="submit">{{signinButtonValue}}</button>
+            </form>
+ 
+    </div>
+</div>
+    
+
+
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" init-modal>
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Sign Up</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form class="form-signup" name="signupForm">
+                        
+                        <div class="row">
+                            <div class="col-sm-12 control-group">
+                                <!-- Username -->
+                                <label class="control-label"  for="username">Username *</label>
+                                <div class="form-group has-feedback">
+                                    <div id="check-username-div">
+                                        <input type="text"
+                                               id="username"
+                                                name="username"
+                                                ng-model="newUser.username"
+                                                placeholder=""
+                                                class="form-control"
+                                                ng-pattern="/^[a-zA-Z0-9_-]{3,20}$/"
+                                                required
+                                                ng-model-options="{ debounce: 1000 }"
+                                                ng-disabled="signupForm.username.$pending"
+                                                check-username
+                                            >
+                                        <span class="form-control-feedback" aria-hidden="true"><i id="check-username-icon" class=""></i></span>
+                                        <span id="usernameStatus" class="sr-only">(success)</span>
+                                        <span class="help-block" ng-show="signupForm.username.$dirty && signupForm.username.$error.uniqueUsername"><small>This username is already assigned!</small></span>
+                                        <span class="help-block" ng-show="signupForm.username.$dirty && signupForm.username.$error.pattern"><small>Check your pattern.</small></span>
+                                        <span class="help-block" ng-show="signupForm.username.$dirty && signupForm.username.$error.required"><small>Username is required.</small></span>
+                                        <span class="help-block" ng-show="signupForm.username.$dirty && signupForm.username.$pending"><small>checking username . . .</small></span>
+                                        <span class="text-muted"><small>Username can contain any letters or numbers, hyphen and underscore,
+                                                            without spaces and should be at least 3 and max 20 characters long.</small></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                            <div class="col-sm-6 control-group">
+                                <!-- Firstname -->
+                                <label class="control-label"  for="firstname">Firstname *</label>
+                                <div class="form-group" color-feedback>
+                                    <input type="text"
+                                            id="firstname"
+                                            name="firstname"
+                                            ng-model="newUser.firstname"
+                                            placeholder=""
+                                            class="form-control"
+                                            ng-pattern="/^[a-zA-Z]{1,20}$/"
+                                            ng-model-options="{ debounce: 500 }"
+                                            required>
+
+                                    <span class="help-block" ng-show="signupForm.firstname.$dirty && signupForm.firstname.$error.required"><small>Firstname is required.</small></span>
+                                    <span class="help-block" ng-show="signupForm.firstname.$dirty && signupForm.firstname.$error.pattern"><small>Check your pattern.</small></span>
+                                    <p class="text-muted"><small>Firstname can contain only letters, without spaces and should be
+                                                            max 20 characters long.</small></p>
+                                </div>
+                            </div>
+                        
+                            <div class="col-sm-6 control-group">
+                                <!-- Lastname -->
+                                <label class="control-label"  for="lastname">Lastname *</label>
+                                <div class="form-group" color-feedback>
+                                    <input type="text"
+                                            id="lastname"
+                                            name="lastname"
+                                            ng-model="newUser.lastname"
+                                            placeholder=""
+                                            class="form-control"
+                                            ng-pattern="/^[a-zA-Z]{1,20}$/"
+                                            required>
+                                        
+                                    <span class="help-block" ng-show="signupForm.lastname.$dirty && signupForm.lastname.$error.required"><small>Lastname is required.</small></span>
+                                    <span class="helb-block" ng-show="signupForm.lastname.$dirty && signupForm.lastname.$error.pattern"><small>Check your pattern.</small></span>
+                                    <p class="text-muted"><small>Lastname can contain only letters, without spaces and should be
+                                                            max 20 characters long.</small></p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            
+                            <div class="col-sm-6 control-group">
+                                <!-- E-mail -->
+                                <label class="control-label" for="email">E-mail *</label>
+                                <div class="form-group" color-feedback>
+                                    <input type="text"
+                                        id="email"
+                                        name="email"
+                                        ng-model="newUser.email"
+                                        placeholder=""
+                                        ng-pattern="/^\S+@\S+\.\S+$/"
+                                        class="form-control"
+                                        ng-model-options="{ debounce: 500 }"
+                                        required>
+                                        
+                                    <span class="help-block" ng-show="signupForm.email.$dirty && signupForm.email.$error.required"><small>E-mail is required.</small></span>
+                                    <span class="help-block" ng-show="signupForm.email.$dirty && signupForm.email.$error.pattern"><small>Pls enter a valid Email address</small></span>
+                                    <p class="text-muted"><small>Please provide your E-mail.</small></p>
+                                </div>
+                            </div>
+        
+                            <div class="col-sm-6 control-group">
+                                <!-- Group -->
+                                <label class="control-label" for="group">Group *</label>
+                                <div class="form-group" color-feedback>
+                                    <select id="group"
+                                            name="group"
+                                            class="form-control"
+                                            ng-model="selectedGroup"
+                                            ng-options="opt as opt.label for opt in options"
+                                            choose={{(selectedGroup).value}}
+                                            required
+                                            >
+                                    </select>
+                                    
+                                    <span class="help-block" ng-show="signupForm.group.$dirty && signupForm.$error.choose"><small>Select a group</small></span>
+                                    <p class="text-muted"><small>Please provide your Group.</small></p>
+                                </div>
+                            </div>
+        
+                        </div>
+                        <div class="row">
+        
+                            <div class="col-sm-6 control-group">
+                                <!-- Password-->
+                                <label class="control-label" for="password">Password *</label>
+                                <div class="form-group" color-feedback>
+                                    <input type="password"
+                                            id="password"
+                                            name="password"
+                                            ng-model="newUser.password"
+                                            
+                                            placeholder=""
+                                            class="form-control"
+                                            ng-pattern="/^.{6,100}$/"
+                                           ng-model-options="{ debounce: 500 }"
+                                            required>
+                                    
+                                    <span class="help-block" ng-show="signupForm.password.$dirty && signupForm.password.$error.required"><small>Password is required.</small></span>
+                                    <span class="help-block" ng-show="signupForm.password.$dirty && signupForm.password.$error.pattern"><small>Check your pattern.</small></span>
+
+                                    <p class="text-muted"><small>Password should be at least 6 characters long.</small>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6 control-group">
+                                <!-- Password -->
+                                <label class="control-label"  for="password_confirm">Password (Confirm)</label>
+                                <div class="form-group confirm" color-feedback>
+                                    <input type="password"
+                                            id="passwordConfirm"
+                                            name="passwordConfirm"
+                                            ng-model="newUser.passwordConfirm"
+                                            equals="{{newUser.password}}"
+                                            placeholder=""
+                                            class="form-control"
+                                            ng-pattern="/^.{6,100}$/"
+                                           ng-model-options="{ debounce: 500 }"
+                                            required>
+                                <span class="text-warning" ng-show="signupForm.passwordConfirm.$dirty && signupForm.$error.equals"><small>Entered passwords do not match.</small></span>
+                                <!--<span class="help-block" ng-show="!signupForm.passwordConfirm.$error.pattern && !signupForm.$error.equals">Entered passwords matches</span>-->
+                                    <p class="text-muted"><small>Please confirm password</small></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-danger" role="alert" ng-show="signupError">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                            <strong>Sign Up Error: </strong>{{errMessage}}! <br/>
+                        </div>
+                    </form>
+                </div><!-- end .container-fluid -->
+            </div>
+            <div class="modal-footer">
+                
+                <span class="text-success" ng-show="signupForm.$valid">
+                    Grats! The form looks well completed! Go ahead and press the 'Sign Up' Button :)
+                </span>
+                <button type="button" class="btn btn-default" ng-click="clearSignupForm()" data-dismiss="modal">Close</button>
+                <button type="submit"
+                        id="signupButton"
+                        class="btn btn-primary"
+                        ng-click="signup()"
+                        ng-disabled="!signupForm.$valid">{{signupButtonValue}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

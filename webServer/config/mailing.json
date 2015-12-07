@@ -1,0 +1,35 @@
+{
+    "options": {
+        "port": 465,
+        "host": "enterSMTPHostHere",
+        "secure": true,
+        "pool": {
+            "maxConnections": 5,
+            "maxMessages": 10,
+            "rateLimit": 5
+        },
+        "noReplyAddress": "enterEmailAdress",
+        "initMailNotification": {
+            "isEnabled": false,
+            "adminAddress": "example@example.com"
+        }
+    },
+    "emailNotificationDefaultValues": [
+        {
+            "id": 1,
+            "isEnabled": false
+        },
+        {
+            "id": 2,
+            "isEnabled": true
+        },
+        {
+            "id": 3,
+            "isEnabled": true
+        },
+        {
+            "id": 4,
+            "isEnabled": true
+        }
+    ]
+}

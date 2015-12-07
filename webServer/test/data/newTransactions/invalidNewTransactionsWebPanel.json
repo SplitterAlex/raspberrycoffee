@@ -1,0 +1,114 @@
+[
+    {
+        "desc": "fromTaker doesnt match with stored id from the bearer token",
+        "code": 400,
+        "errMsg": "Your userId stored in your bearer token, doesnt match with the id from fromTaker",
+        "transaction": {
+            "tDate": "2015-01-25 13:13:13",
+            "fromTaker": 121212,
+            "toDepositor": 111113,
+            "amount": -0.50,
+            "note": "Test booking 1 coffee",
+            "purposeId": 1,
+            "quantity": 1
+        }
+    },
+    {
+        "desc": "toDepositor - User doesnt exist",
+        "code": 400,
+        "errMsg": "toDepositor: User doesnt exist",
+        "transaction": {
+            "tDate": "2015-01-25 13:13:13",
+            "fromTaker": 111112,
+            "toDepositor": 999999,
+            "amount": -0.50,
+            "note": "Test booking 1 coffee",
+            "purposeId": 1,
+            "quantity": 1
+        }
+    },
+    {
+        "desc": "purposeId is not defined in database",
+        "code": 400,
+        "errMsg": "purposeId: 999 is not defined in database",
+        "transaction": {
+            "tDate": "2015-01-25 13:13:13",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -0.50,
+            "note": "Test",
+            "purposeId": 999,
+            "quantity": 1
+        }
+    },
+    {
+        "desc": "Credit - Amount is not positive",
+        "code": 400,
+        "errMsg": "Credit -> Amount should be positiv",
+        "transaction": {
+            "tDate": "2015-01-25 13:13:13",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -1,
+            "note": "Test",
+            "purposeId": 9,
+            "quantity": 1
+        }
+    },
+    {
+        "desc": "Credit - Quantity is not 1",
+        "code": 400,
+        "errMsg": "Credit -> Quantity should be 1",
+        "transaction": {
+            "tDate": "2015-01-25 13:13:13",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": 1,
+            "note": "Test",
+            "purposeId": 9,
+            "quantity": 2
+        }
+    },
+    {
+        "desc": "Debit - Amount is not negative",
+        "code": 400,
+        "errMsg": "Debit -> Amount should be negativ",
+        "transaction": {
+            "tDate": "2015-01-25 13:13:13",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": 1,
+            "note": "Test",
+            "purposeId": 10,
+            "quantity": 1
+        }
+    },
+    {
+        "desc": "Debit - Quantity is not 1",
+        "code": 400,
+        "errMsg": "Debit -> Quantity should be 1",
+        "transaction": {
+            "tDate": "2015-01-25 13:13:13",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -1,
+            "note": "Test",
+            "purposeId": 10,
+            "quantity": 2
+        }
+    },
+    {
+        "desc": "Product price doesnt compare with price defined in the database",
+        "code": 400,
+        "errMsg": "Price for product Coffee should be -0.5 Euro, but your input is -1 Euro",
+        "transaction": {
+            "tDate": "2015-01-25 13:13:13",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -1,
+            "note": "Test",
+            "purposeId": 1,
+            "quantity": 1
+        }
+    }
+]

@@ -1,0 +1,70 @@
+[
+    {
+        "desc": "Query property endDate has the wrong format",
+        "url": "/statistics/customRange",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "endDate",
+        "errMsg": "Invalid characters",
+        "queries": {
+            "endDate": "2015-99-01",
+            "startDate": "2015-06-32"
+        }
+    },
+    {
+        "desc": "Query property startDate has the wrong format",
+        "url": "/statistics/customRange",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "startDate",
+        "errMsg": "Invalid characters",
+        "queries": {
+            "endDate": "2015-12-12",
+            "startDate": "2015-00-01"
+        }
+    },
+    {
+        "desc": "Query property startDate is missing",
+        "url": "/statistics/customRange",
+        "errorCode": "validation failed",
+        "code": "MISSING",
+        "field": "startDate",
+        "errMsg": "Field is required",
+        "queries": {
+            "endDate": "2015-06-12",
+            "startDate": ""
+        }
+    },
+    {
+        "desc": "Query property endDate is missing",
+        "url": "/statistics/customRange",
+        "errorCode": "validation failed",
+        "code": "MISSING",
+        "field": "endDate",
+        "errMsg": "Field is required",
+        "queries": {
+            "endDate": "",
+            "startDate": "2015-10-12"
+        }
+    },
+    {
+        "desc": "Range between dates is too big",
+        "url": "/statistics/customRange",
+        "errorCode": "BadRequestError",
+        "errMsg": "Range between dates is too big",
+        "queries": {
+            "endDate": "2015-12-31",
+            "startDate": "2015-11-01"
+        }
+    },
+    {
+        "desc": "Range between dates is negativ",
+        "url": "/statistics/customRange",
+        "errorCode": "BadRequestError",
+        "errMsg": "Range between dates is negativ",
+        "queries": {
+            "endDate": "2015-11-21",
+            "startDate": "2015-12-31"
+        }
+    }
+]

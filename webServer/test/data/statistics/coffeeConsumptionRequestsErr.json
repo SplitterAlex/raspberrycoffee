@@ -1,0 +1,96 @@
+[
+    {
+        "desc": "Query property startDate has the wrong format",
+        "url": "/statistics/coffeeConsumption",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "startDate",
+        "errMsg": "Invalid characters",
+        "queries": {
+            "startDate": "2015-3-01",
+            "endDate": "2015-03-01"
+        }
+    },
+    {
+        "desc": "Query property endDate has the wrong format",
+        "url": "/statistics/coffeeConsumption",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "endDate",
+        "errMsg": "Invalid characters",
+        "queries": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-03-01 12:12:12"
+        }
+    },
+    {
+        "desc": "Query property fromGroup is not numeric",
+        "url": "/statistics/coffeeConsumption",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "fromGroup",
+        "errMsg": "Invalid number",
+        "queries": {
+            "fromGroup": "4a"
+        }
+    },
+    {
+        "desc": "Query property fromUser is not numeric",
+        "url": "/statistics/coffeeConsumption",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "fromUser",
+        "errMsg": "Invalid number",
+        "queries": {
+            "fromUser": "'12'"
+        }
+    },
+    {
+        "desc": "startDate is set, but endDate is missing",
+        "url": "/statistics/coffeeConsumption",
+        "errorCode": "BadRequestError",
+        "errMsg": "endDate is not defined",
+        "queries": {
+            "startDate": "2015-06-03",
+            "endDate": ""
+        }
+    },
+    {
+        "desc": "startDate is set, but endDate is missing",
+        "url": "/statistics/coffeeConsumption",
+        "errorCode": "BadRequestError",
+        "errMsg": "endDate is not defined",
+        "queries": {
+            "startDate": "2015-06-03"
+        }
+    },
+    {
+        "desc": "endDate is set, but startDate is missing",
+        "url": "/statistics/coffeeConsumption",
+        "errorCode": "BadRequestError",
+        "errMsg": "startDate is not defined",
+        "queries": {
+            "endDate": "2015-06-03"
+        }
+    },
+    {
+        "desc": "endDate is set, but startDate is missing",
+        "url": "/statistics/coffeeConsumption",
+        "errorCode": "BadRequestError",
+        "errMsg": "startDate is not defined",
+        "queries": {
+            "endDate": "2015-06-03",
+            "startDate": ""
+        }
+    },
+    {
+        "desc": "diff between date ranges is negativ",
+        "url": "/statistics/coffeeConsumption",
+        "errorCode": "BadRequestError",
+        "errMsg": "Range between dates is negativ",
+        "queries": {
+            "endDate": "2015-06-03",
+            "startDate": "2015-06-04"
+        }
+    }
+]

@@ -1,0 +1,55 @@
+[
+    {
+        "desc": "endDate has the wrong format",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "endDate",
+        "errMsg": "Invalid characters",
+        "url": "/admin/transactions",
+        "queries": {
+            "endDate": "06-01-2015",
+            "startDate": "2015-06-01"
+        }
+    },
+    {
+        "desc": "startDate has the wrong format",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "startDate",
+        "errMsg": "Invalid characters",
+        "url": "/admin/transactions",
+        "queries": {
+            "startDate": "2015/01/15",
+            "endDate": "2015-06-01"
+        }
+    },
+    {
+        "desc": "Range is not completey defined - endDate is missing",
+        "errorCode": "BadRequestError",
+        "errMsg": "endDate is not defined",
+        "url": "/admin/transactions",
+        "queries": {
+            "endDate": "",
+            "startDate": "2015-06-01"
+        }
+    },
+    {
+        "desc": "Range is not completey defined - startDate is missing",
+        "errorCode": "BadRequestError",
+        "errMsg": "startDate is not defined",
+        "url": "/admin/transactions",
+        "queries": {
+            "endDate": "2015-06-01"
+        }
+    },
+    {
+        "desc": "Range between dates is negativ - startDate > endDate",
+        "errorCode": "BadRequestError",
+        "errMsg": "Range between dates is negativ",
+        "url": "/admin/transactions",
+        "queries": {
+            "startDate": "2015-06-01",
+            "endDate": "2015-05-01"
+        }
+    }
+]

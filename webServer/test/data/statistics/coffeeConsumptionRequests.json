@@ -1,0 +1,245 @@
+[
+    {
+        "desc": "Get global coffee consumption - All time",
+        "url": "/statistics/coffeeConsumption",
+        "queries": {
+
+        },
+        "result": {
+            "startDate": "2014-01-01",
+            "endDate": "",
+            "total": 214,
+            "data": [
+                {
+                    "label": "Coffee",
+                    "count": 90
+                },
+                {
+                    "label": "Espresso",
+                    "count": 82
+                },
+                {
+                    "label": "Latte",
+                    "count": 20
+                },
+                {
+                    "label": "Cappuccino",
+                    "count": 22
+                }
+        ]
+        }
+    },
+    {
+        "desc": "Get global coffee consumption - 2015-07-01 to 2015-07-31",
+        "url": "/statistics/coffeeConsumption",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31"
+        },
+        "result": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31",
+            "total": 72,
+            "data": [
+                {
+                    "label": "Coffee",
+                    "count": 33
+                },
+                {
+                    "label": "Espresso",
+                    "count": 22
+                },
+                {
+                    "label": "Latte",
+                    "count": 8
+                },
+                {
+                    "label": "Cappuccino",
+                    "count": 9
+                }
+        ]
+        }
+    },
+    {
+        "desc": "Get global coffee consumption - 2015-05-28 to 2015-05-28",
+        "url": "/statistics/coffeeConsumption",
+        "queries": {
+            "startDate": "2015-05-28",
+            "endDate": "2015-05-28"
+        },
+        "result": {
+            "startDate": "2015-05-28",
+            "endDate": "2015-05-28",
+            "total": 5,
+            "data": [
+                {
+                    "label": "Coffee",
+                    "count": 4
+                },
+                {
+                    "label": "Latte",
+                    "count": 1
+                }
+        ]
+        }
+    },
+    {
+        "desc": "Get Group coffee consumption - All time",
+        "url": "/statistics/coffeeConsumption",
+        "queries": {
+            "startDate": "",
+            "endDate": "",
+            "fromGroup": 1
+        },
+        "result": {
+            "startDate": "2014-01-01",
+            "endDate": "",
+            "total": 14,
+            "data": [
+                {
+                    "label": "Coffee",
+                    "count": 6
+                },
+                {
+                    "label": "Espresso",
+                    "count": 6
+                },
+                {
+                    "label": "Latte",
+                    "count": 1
+                },
+                {
+                    "label": "Cappuccino",
+                    "count": 1
+                }
+        ]
+        }
+    },
+    {
+        "desc": "Get Group coffee consumption - 2015-05-01 to 2015-05-31",
+        "url": "/statistics/coffeeConsumption",
+        "queries": {
+            "startDate": "2015-05-01",
+            "endDate": "2015-05-31",
+            "fromGroup": 1
+        },
+        "result": {
+            "startDate": "2015-05-01",
+            "endDate": "2015-05-31",
+            "total": 3,
+            "data": [
+                {
+                    "label": "Coffee",
+                    "count": 1
+                },
+                {
+                    "label": "Espresso",
+                    "count": 2
+                }
+        ]
+        }
+    },
+    {
+        "desc": "Get Group coffee consumption - 2015-05-02 to 2015-05-02",
+        "url": "/statistics/coffeeConsumption",
+        "queries": {
+            "startDate": "2015-05-02",
+            "endDate": "2015-05-02",
+            "fromGroup": 1
+        },
+        "result": {
+            "startDate": "2015-05-02",
+            "endDate": "2015-05-02",
+            "total": 1,
+            "data": [
+                {
+                    "label": "Espresso",
+                    "count": 1
+                }
+        ]
+        }
+    },
+    {
+        "desc": "Get User coffee consumption - All time",
+        "url": "/statistics/coffeeConsumption",
+        "queries": {
+            "startDate": "",
+            "endDate": "",
+            "fromGroup": "",
+            "fromUser": 111120
+        },
+        "result": {
+            "startDate": "2014-01-01",
+            "endDate": "",
+            "total": 13,
+            "data": [
+                {
+                    "label": "Coffee",
+                    "count": 7
+                },
+                {
+                    "label": "Espresso",
+                    "count": 4
+                },
+                {
+                    "label": "Latte",
+                    "count": 1
+                },
+                {
+                    "label": "Cappuccino",
+                    "count": 1
+                }
+        ]
+        }
+    },
+    {
+        "desc": "Get User coffee consumption - 2015-06-01 to 2015-06-30",
+        "url": "/statistics/coffeeConsumption",
+        "queries": {
+            "startDate": "2015-06-01",
+            "endDate": "2015-06-30",
+            "fromGroup": "",
+            "fromUser": 111120
+        },
+        "result": {
+            "startDate": "2015-06-01",
+            "endDate": "2015-06-30",
+            "total": 3,
+            "data": [
+                {
+                    "label": "Espresso",
+                    "count": 1
+                },
+                {
+                    "label": "Latte",
+                    "count": 1
+                },
+                {
+                    "label": "Cappuccino",
+                    "count": 1
+                }
+        ]
+        }
+    },
+    {
+        "desc": "Get User coffee consumption - 2015-07-02 to 2015-07-02",
+        "url": "/statistics/coffeeConsumption",
+        "queries": {
+            "startDate": "2015-07-02",
+            "endDate": "2015-07-02",
+            "fromGroup": "",
+            "fromUser": 111120
+        },
+        "result": {
+            "startDate": "2015-07-02",
+            "endDate": "2015-07-02",
+            "total": 2,
+            "data": [
+                {
+                    "label": "Coffee",
+                    "count": 2
+                }
+        ]
+        }
+    }
+]

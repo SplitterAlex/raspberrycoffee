@@ -1,0 +1,105 @@
+[
+    {
+        "desc": "Query property fromYear has the wrong format",
+        "url": "/statistics/rankings/users",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "fromYear",
+        "errMsg": "Invalid characters",
+        "queries": {
+            "fromYear": "2013-03",
+            "fromMonth": "",
+            "fromGroup": ""
+        }
+    },
+    {
+        "desc": "Query property fromMonth has the wrong format",
+        "url": "/statistics/rankings/users",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "fromMonth",
+        "errMsg": "Invalid characters",
+        "queries": {
+            "fromMonth": "4",
+            "fromGroup": ""
+        }
+    },
+    {
+        "desc": "Query property groupId is not numeric",
+        "url": "/statistics/rankings/users",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "fromGroup",
+        "errMsg": "Invalid number",
+        "queries": {
+            "fromGroup": "%$"
+        }
+    },
+    {
+        "desc": "from Month is set, but formYear is missing",
+        "url": "/statistics/rankings/users",
+        "errorCode": "BadRequestError",
+        "errMsg": "Query fromYear is missing",
+        "queries": {
+            "fromYear": "",
+            "fromMonth": "03",
+            "fromGroup": ""
+        }
+    },
+    {
+        "desc": "from Month is set, but form Year is missing",
+        "url": "/statistics/rankings/users",
+        "errorCode": "BadRequestError",
+        "errMsg": "Query fromYear is missing",
+        "queries": {
+            "fromMonth": "03",
+            "fromGroup": ""
+        }
+    },
+    {
+        "desc": "Query property fromYear has the wrong format",
+        "url": "/statistics/rankings/groups",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "fromYear",
+        "errMsg": "Invalid characters",
+        "queries": {
+            "fromYear": "2013-03",
+            "fromMonth": "",
+            "fromGroup": ""
+        }
+    },
+    {
+        "desc": "Query property fromMonth has the wrong format",
+        "url": "/statistics/rankings/groups",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "fromMonth",
+        "errMsg": "Invalid characters",
+        "queries": {
+            "fromMonth": "4",
+            "fromGroup": ""
+        }
+    },
+    {
+        "desc": "Query property groupId is not numeric",
+        "url": "/statistics/rankings/groups",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "fromGroup",
+        "errMsg": "Invalid number",
+        "queries": {
+            "fromGroup": "%$"
+        }
+    },
+    {
+        "desc": "resource for is not defined",
+        "url": "/statistics/rankings/champions",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "for",
+        "errMsg": "Unexpected value or invalid argument",
+        "queries": {
+        }
+    }
+]

@@ -1,0 +1,8 @@
+*.swp
+.DS_Store
+node_modules/
+npm-debug.log
+localhost.crt
+localhost.key
+dist/
+app/

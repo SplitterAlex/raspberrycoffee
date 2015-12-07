@@ -1,0 +1,97 @@
+[
+    {
+        "desc": "Get global month statistic - 2015 2014",
+        "url": "/statistics/monthly",
+        "queries": {
+            "fromMainYear": 2015,
+            "fromSecondYear": 2014
+        },
+        "result": {
+            "series": ["2015", "2014"],
+            "data":[
+                [0,0,0,0,68,74,72,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0]
+            ]
+        }
+    },
+    {
+        "desc": "Get global month statistic - 2014 2013",
+        "url": "/statistics/monthly",
+        "queries": {
+            "fromMainYear": 2014,
+            "fromSecondYear": 2013
+        },
+        "result": {
+            "series": ["2014", "2013"],
+            "data":[
+                [0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0]
+            ]
+        }
+    },
+    {
+        "desc": "Get month statistic from group 1 - 2015 2014",
+        "url": "/statistics/monthly",
+        "queries": {
+            "fromMainYear": 2015,
+            "fromSecondYear": 2014,
+            "fromGroup": 1
+        },
+        "result": {
+            "series": ["2015", "2014"],
+            "data":[
+                [0,0,0,0,3,4,7,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0]
+            ]
+        }
+    },
+    {
+        "desc": "Get month statistic from group 1 - 2014 2013",
+        "url": "/statistics/monthly",
+        "queries": {
+            "fromMainYear": 2014,
+            "fromSecondYear": 2013,
+            "fromGroup": 1
+        },
+        "result": {
+            "series": ["2014", "2013"],
+            "data":[
+                [0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0]
+            ]
+        }
+    },
+    {
+        "desc": "Get month statistic from user 111120 - 2015 2014",
+        "url": "/statistics/monthly",
+        "queries": {
+            "fromMainYear": 2015,
+            "fromSecondYear": 2014,
+            "fromGroup": "",
+            "fromUser": 111120
+        },
+        "result": {
+            "series": ["2015", "2014"],
+            "data":[
+                [0,0,0,0,8,3,2,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0]
+            ]
+        }
+    },
+    {
+        "desc": "Get month statistic from user 111120 - 2014 2013",
+        "url": "/statistics/monthly",
+        "queries": {
+            "fromMainYear": 2014,
+            "fromSecondYear": 2013,
+            "fromUser": 111120
+        },
+        "result": {
+            "series": ["2014", "2013"],
+            "data":[
+                [0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0]
+            ]
+        }
+    }
+]

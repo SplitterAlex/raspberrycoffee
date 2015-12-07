@@ -1,0 +1,60 @@
+[
+    {
+        "desc": "Query property fromMainYear has the wrong format",
+        "url": "/statistics/monthly",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "fromMainYear",
+        "errMsg": "Invalid characters",
+        "queries": {
+            "fromMainYear": 201,
+            "fromSecondYear": "2015"
+        }
+    },
+    {
+        "desc": "Query property fromSecondYear has the wrong format",
+        "url": "/statistics/monthly",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "fromSecondYear",
+        "errMsg": "Invalid characters",
+        "queries": {
+            "fromMainYear": "2015",
+            "fromSecondYear": "03"
+        }
+    },
+    {
+        "desc": "Query property fromSecondYear is missing",
+        "url": "/statistics/monthly",
+        "errorCode": "validation failed",
+        "code": "MISSING",
+        "field": "fromSecondYear",
+        "errMsg": "Field is required",
+        "queries": {
+            "fromMainYear": "2015",
+            "fromSecondYear": ""
+        }
+    },
+    {
+        "desc": "Query property fromMainYear is missing",
+        "url": "/statistics/monthly",
+        "errorCode": "validation failed",
+        "code": "MISSING",
+        "field": "fromMainYear",
+        "errMsg": "Field is required",
+        "queries": {
+            "fromMainYear": "",
+            "fromSecondYear": "2015"
+        }
+    },
+    {
+        "desc": "fromMainYear and fromSecondYear are queal",
+        "url": "/statistics/monthly",
+        "errorCode": "BadRequestError",
+        "errMsg": "fromMainYear and fromSecondYear are equal",
+        "queries": {
+            "fromMainYear": "2015",
+            "fromSecondYear": "2015"
+        }
+    }
+]

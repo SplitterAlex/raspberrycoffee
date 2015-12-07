@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 class="page-heading"><i class="fa fa-globe"></i></i> Global charts</h1>
+            <br>
+        </div>
+    </div>
+
+    <div class="well">
+        <div ng-controller="RankingsCtrl" is-global="yes">
+            <div class="row">
+                <h2 class="text-center"><u> Rankings:</u><br></h2>
+                <br><br>
+                <div class="col-md-12 text-center">
+                    <ranking-date-choosing-pills></ranking-date-choosing-pills>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="text-center">Top 10 by users</h3>
+                    <ranking purpose="user"></ranking>
+                </div>
+
+                <div class="col-md-6">
+                    <h3 clasS="text-center">Top 10 by groups</h3>
+                    <ranking purpose="group"></ranking>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <coffee-consumption-chart-pie ng-controller="CoffeeConsumptionCtrl" purpose="global">></coffee-consumption-chart-pie>
+            <monthly-statistic-bar ng-controller="MonthStatisticCtrl" purpose="global"></monthly-statistic-bar>
+        </div>
+
+        <div class="row">
+            <weekly-statistic-line ng-controller="WeekStatisticCtrl" purpose="global"></weekly-statistic-line>
+            <daily-statistic-line ng-controller="DayStatisticCtrl" purpose="global"></daily-statistic-line>
+        </div>
+        
+        <div class="row">
+            <custom-range-statistic-line ng-controller="CustomRangeCtrl" purpose="global"></custom-range-statistic-line>
+        </div>
+    </div>
+    <!-- /.well -->
+</div>

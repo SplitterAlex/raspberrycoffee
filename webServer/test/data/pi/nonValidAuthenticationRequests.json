@@ -1,0 +1,72 @@
+[
+    {
+        "desc": "Authentication 111143. User is blocked",
+        "url": "/pi/authentication",
+        "data": {
+            "key": "111143A",
+            "date": "2015-01-01 01:01:01"
+        },
+        "result": {
+            "authenticated": true,
+            "authorized": false,
+            "user_id": 111143,
+            "job_to_display": {
+                "time": 8000,
+                "msg1": "You are blocked!",
+                "msg2": "Contact an Admin"
+            }
+        }
+    },
+    {
+        "desc": "Authentication 111144. User is not active",
+        "url": "/pi/authentication",
+        "data": {
+            "key": "111144A",
+            "date": "2015-01-01 02:02:02"
+        },
+        "result": {
+            "authenticated": true,
+            "authorized": false,
+            "user_id": 111144,
+            "job_to_display": {
+                "time": 8000,
+                "msg1": "Account locked",
+                "msg2": " "
+            }
+        }
+    },
+    {
+        "desc": "Authentication 111145. User is delted",
+        "url": "/pi/authentication",
+        "data": {
+            "key": "111145A",
+            "date": "2015-01-01 03:03:03"
+        },
+        "result": {
+            "authenticated": true,
+            "authorized": false,
+            "user_id": 111145,
+            "job_to_display": {
+                "time": 10000,
+                "msg1": "Account deleted",
+                "msg2": "An admin can restore your account"
+            }
+        }
+    },
+    {
+        "desc": "Authentication Unknown key",
+        "url": "/pi/authentication",
+        "data": {
+            "key": "1234ABC1234",
+            "date": "2015-01-01 04:04:04"
+        },
+        "result": {
+            "authenticated": false,
+            "job_to_display": {
+                "time": 10000,
+                "msg1": "Unknown Key",
+                "msg2": "1234ABC1234"
+            }
+        }
+    }
+]

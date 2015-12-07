@@ -1,0 +1,60 @@
+[
+    {
+        "desc": "Query property fromMainDay has the wrong format",
+        "url": "/statistics/daily",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "fromMainDay",
+        "errMsg": "Invalid characters",
+        "queries": {
+            "fromMainDay": "2015-99-01",
+            "fromSecondDay": "2015-06-32"
+        }
+    },
+    {
+        "desc": "Query property fromSecondDay has the wrong format",
+        "url": "/statistics/daily",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "fromSecondDay",
+        "errMsg": "Invalid characters",
+        "queries": {
+            "fromMainDay": "2015-12-12",
+            "fromSecondDay": "2015-00-01"
+        }
+    },
+    {
+        "desc": "Query property fromSecondDay is missing",
+        "url": "/statistics/daily",
+        "errorCode": "validation failed",
+        "code": "MISSING",
+        "field": "fromSecondDay",
+        "errMsg": "Field is required",
+        "queries": {
+            "fromMainDay": "2015-06-12",
+            "fromSecondDay": ""
+        }
+    },
+    {
+        "desc": "Query property fromMainDay is missing",
+        "url": "/statistics/daily",
+        "errorCode": "validation failed",
+        "code": "MISSING",
+        "field": "fromMainDay",
+        "errMsg": "Field is required",
+        "queries": {
+            "fromMainDay": "",
+            "fromSecondDay": "2015-10-12"
+        }
+    },
+    {
+        "desc": "fromMainDay and fromSecondDay are equal",
+        "url": "/statistics/daily",
+        "errorCode": "BadRequestError",
+        "errMsg": "fromMainDay and fromSecondDay are equal",
+        "queries": {
+            "fromMainDay": "2015-12-24",
+            "fromSecondDay": "2015-12-24"
+        }
+    }
+]

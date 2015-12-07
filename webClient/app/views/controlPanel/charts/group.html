@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1><i class="fa fa-users"></i> Group charts <small>{{user.groupName}}</small></h1>
+            <br>
+        </div>
+    </div>
+
+    <div class="well">
+        <div class="row">
+            <br>
+            <br>
+            <div class="col-md-6">
+                <div ng-controller="RankingsCtrl" is-global="no">
+                    <h3 class="text-center"><u>Ranking (Top 10):</u></h3>
+                    <div class="text-center">
+                        <ranking-date-choosing-pills></ranking-date-choosing-pills>
+                    </div>
+                    <ranking purpose="user"></ranking>
+                </div>  
+            </div>
+            <custom-range-statistic-line ng-controller="CustomRangeCtrl" purpose="group"></custom-range-statistic-line>
+        </div>
+
+        <div class="row">
+            <coffee-consumption-chart-pie ng-controller="CoffeeConsumptionCtrl" purpose="group">></coffee-consumption-chart-pie>
+            <monthly-statistic-bar ng-controller="MonthStatisticCtrl" purpose="group"></monthly-statistic-bar>
+        </div>
+        <div class="row">
+            <weekly-statistic-line ng-controller="WeekStatisticCtrl" purpose="group"></weekly-statistic-line>
+            <daily-statistic-line ng-controller="DayStatisticCtrl" purpose="group"></daily-statistic-line>
+        </div>
+    </div>
+</div>

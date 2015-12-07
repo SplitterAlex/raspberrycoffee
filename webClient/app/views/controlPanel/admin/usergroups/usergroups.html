@@ -1,0 +1,111 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                <i class="fa fa-users"></i> 
+                Usergroups
+                <button ng-click="startNewUsergroup()" class="btn btn-primary">Create new Usergroup</button>
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-6" class="hide-fade">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-center" style="white-space: nowrap">
+                                ID
+                                <a href="javascript:void(0)" ng-click="predicate='-id'; reverse=false"><i class="fa fa-arrow-down"></i></a>
+                                <a href="javascript:void(0)" ng-click="predicate='id'; reverse=false"><i class="fa fa-arrow-up"></i></a>
+                            </th>
+                            <th class="text-center">
+                                Name
+                                <a href="javascript:void(0)" ng-click="predicate='-name'; reverse=false"><i class="fa fa-arrow-down"></i></a>
+                                <a href="javascript:void(0)" ng-click="predicate='name'; reverse=false"><i class="fa fa-arrow-up"></i></a>
+                            </th>
+                            <th class="text-center">
+                                Shortform
+                            </th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="group in list | orderBy:predicate:reverse">
+                            <td class="text-center">{{group.id}}</td>
+                            <td>{{group.name}}</td>
+                            <td class="text-center">{{group.shortForm}}</td>
+                            <td class="text-center"><a href="javascript:void(0)" ng-click="startEditUserGroup(group)"><i class="fa fa-pencil-square-o"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="alert alert-danger" role="alert" ng-show="error">
+                <strong><i class="fa fa-info-circle"></i> {{respMessage}}</strong>
+            </div>
+            <div class="alert alert-warning" role="alert" ng-show="!list.length">
+                <strong><i class="fa fa-info-circle"></i> No usergroups found</strong>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <h3 class="text-center"><u>User/group distribution</u></h3>
+            <h4 class="text-center">Total: {{total}}</h4>
+            <br>
+            <div class="alert alert-danger text-center" role="alert" ng-show="statsError">
+                <strong>Oops a daisy! There went something wrong :( </strong>
+            </div>
+            <div ng-hide="statsError" class="hide-fade">
+                <canvas class="chart chart-pie" data="data" labels="labels" legend="true"></canvas>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="usergroupModal" tabindex="-1" role="dialog" aria-labelledby="usergroupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="usergroupModalLabel">Usergroup</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form class="form-horizontal" id="usergroupForm" name="usergroupForm">
+                            <div class="form-group">
+                                <label for="name" class="col-sm-2 control-label">Name*:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" placeholder="Enter name here" class="form-control" name="name" id="inputName" ng-maxlength="50" ng-model="form.name" required>
+                                    <span ng-show="usergroupForm.name.$error.maxlength" class="text-warning">max. 50 characters allowed</span>
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px" class="form-group">
+                                <label for="shortform" class="col-sm-2 control-label">Shortform:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" placeholder="Enter short form here" class="form-control" name="shortForm" id="inputShortform" ng-maxlength="10" ng-model="form.shortForm">
+                                    <span ng-show="usergroupForm.shortForm.$error.maxlength" class="text-warning">max. 10 characters allowed</span>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="alert text-center" style="margin-top: 10px" ng-show="modalSuccess || modalError" ng-class="{'alert-success': modalSuccess, 'alert-danger': modalError}">
+                            <strong><i class="fa fa-info-circle"></i></strong> {{respMessage}}
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" ng-click="action(form)" ng-disabled="!usergroupForm.$valid">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->

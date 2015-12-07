@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1><i class="fa fa-users"></i> User charts <small>{{user.firstname}} {{user.lastname}}</small></h1>
+            <br>
+            <div class="alert alert-danger" role="alert" ng-show="error.show">
+                <strong>{{error.message}} <i class="fa fa-frown-o"></i></strong>
+            </div>
+        </div>
+    </div>
+
+    <div class="well">
+        <div class="row">
+            <coffee-consumption-chart-pie ng-controller="CoffeeConsumptionCtrl" purpose="user">></coffee-consumption-chart-pie>
+            <monthly-statistic-bar ng-controller="MonthStatisticCtrl" purpose="user"></monthly-statistic-bar>
+        </div>
+        <div class="row">
+            <weekly-statistic-line ng-controller="WeekStatisticCtrl" purpose="user"></weekly-statistic-line>
+            <daily-statistic-line ng-controller="DayStatisticCtrl" purpose="user"></daily-statistic-line>
+        </div>
+        <div class="row">
+            <custom-range-statistic-line ng-controller="CustomRangeCtrl" purpose="user"></custom-range-statistic-line>
+        </div>
+    </div>
+</div>

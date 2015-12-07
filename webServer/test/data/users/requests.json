@@ -1,0 +1,72 @@
+[
+    {
+        "desc": "No Search filter is set - get all users",
+        "url": "/user",
+        "queries": {
+            "search": ""
+        },
+        "result": {
+            "length": 16
+        }
+    },
+    {
+        "desc": "Search filter is set too NoUser",
+        "url": "/user",
+        "queries": {
+            "search": "NoUser"
+        },
+        "result": {
+            "length": 0
+        }
+    },
+    {
+        "desc": "Search filter is set too Falch",
+        "url": "/user",
+        "queries": {
+            "search": "Falch"
+        },
+        "result": {
+            "length": 5
+        }
+    },
+    {
+        "desc": "Search filter is set too csap",
+        "url": "/user",
+        "queries": {
+            "search": "csap"
+        },
+        "result": {
+            "length": 10
+        }
+    },
+    {
+        "desc": "Search filter is set too c1111",
+        "url": "/user",
+        "queries": {
+            "search": "c1111"
+        },
+        "result": {
+            "length": 4
+        }
+    },
+    {
+        "desc": "Search filter is set too Stolzenbach",
+        "url": "/user",
+        "queries": {
+            "search": "Stolzenbach"
+        },
+        "result": {
+            "length": 1
+        }
+    },
+    {
+        "desc": "Search filter is set too csap1123",
+        "url": "/user",
+        "queries": {
+            "search": "csap1123"
+        },
+        "result": {
+            "length": 1
+        }
+    }
+]

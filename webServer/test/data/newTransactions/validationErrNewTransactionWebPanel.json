@@ -1,0 +1,250 @@
+[
+    {
+        "desc": "tDate is missing",
+        "code": "MISSING",
+        "field": "tDate",
+        "errMsg": "Field is required",
+        "transaction": {
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -0.50,
+            "note": "Test booking 1 coffee",
+            "purposeId": 1,
+            "quantity": 1
+        }
+    },
+    {
+        "desc": "tDate has the wrong format",
+        "code": "INVALID",
+        "field": "tDate",
+        "errMsg": "Invalid characters",
+        "transaction": {
+            "tDate": "2015/01/25",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -0.50,
+            "note": "Test booking 1 coffee",
+            "purposeId": 1,
+            "quantity": 1
+        }
+    },
+    {
+        "desc": "fromTaker is missing",
+        "code": "MISSING",
+        "field": "fromTaker",
+        "errMsg": "Field is required",
+        "transaction": {
+            "tDate": "2015-01-25 13:13:13",
+            "toDepositor": 111113,
+            "amount": -1,
+            "note": "Test booking 1 coffee large",
+            "purposeId": 2,
+            "quantity": 1
+        }
+    },
+    {
+        "desc": "fromTaker is not numeric",
+        "code": "INVALID",
+        "field": "fromTaker",
+        "errMsg": "Invalid number",
+        "transaction": {
+            "tDate": "2015-01-25 13:13:13",
+            "fromTaker": "111A12",
+            "toDepositor": 111113,
+            "amount": -1,
+            "note": "Test booking 1 coffee large",
+            "purposeId": 2,
+            "quantity": 1
+        }
+    },
+    {
+        "desc": "toDepositor is missing",
+        "code": "MISSING",
+        "field": "toDepositor",
+        "errMsg": "Field is required",
+        "transaction": {
+            "tDate": "2015-01-25 13:13:13",
+            "fromTaker": 111112,
+            "amount": -1,
+            "note": "Test booking 1 coffee large",
+            "purposeId": 2,
+            "quantity": 1
+        }
+    },
+    {
+        "desc": "toDepositor is not numeric",
+        "code": "INVALID",
+        "field": "toDepositor",
+        "errMsg": "Invalid number",
+        "transaction": {
+            "tDate": "2015-01-25 13:13:13",
+            "fromTaker": 111112,
+            "toDepositor": "111ä13",
+            "amount": -1,
+            "note": "Test booking 1 coffee large",
+            "purposeId": 2,
+            "quantity": 1
+        }
+    },
+    {
+        "desc": "amount is missing",
+        "code": "MISSING",
+        "field": "amount",
+        "errMsg": "Field is required",
+        "transaction": {
+            "tDate": "2015-01-25 14:14:14",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "note": "Test booking 1 espresso",
+            "purposeId": 3,
+            "quantity": 1
+        }
+    },
+    {
+        "desc": "amount is not a valid number",
+        "code": "INVALID",
+        "field": "amount",
+        "errMsg": "Invalid decimal",
+        "transaction": {
+            "tDate": "2015-01-25 14:14:14",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": "4:343",
+            "note": "Test booking 1 espresso",
+            "purposeId": 3,
+            "quantity": 1
+        }
+    },
+    {
+        "desc": "note is missing",
+        "code": "MISSING",
+        "field": "note",
+        "errMsg": "Field is either missing or too long",
+        "transaction": {
+            "tDate": "2015-01-25 14:14:14",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": "4,34",
+            "purposeId": 3,
+            "quantity": 1
+        }
+    },
+    {
+        "desc": "note is too long",
+        "code": "INVALID",
+        "field": "note",
+        "errMsg": "Field is either missing or too long",
+        "transaction": {
+            "tDate": "2015-01-25 14:14:14",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": "4,34",
+            "note": "abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijkjkjkjaläfgjksldfjds jksdlf lkjerflkj §$% wer23454234elkfdjwelfkjwelwllefjwlefjsdfsf",
+            "purposeId": 3,
+            "quantity": 1
+        }
+    },
+    {
+        "desc": "purposeId is missing",
+        "code": "MISSING",
+        "field": "purposeId",
+        "errMsg": "Field is required",
+        "transaction": {
+            "tDate": "2015-01-25 14:14:14",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -0.50,
+            "note": "Test booking 1 espresso",
+            "quantity": 1
+        }
+    },
+    {
+        "desc": "purposeId is negativ",
+        "code": "INVALID",
+        "field": "purposeId",
+        "errMsg": "Invalid number",
+        "transaction": {
+            "tDate": "2015-01-25 14:14:14",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -0.50,
+            "note": "Test booking 1 espresso",
+            "purposeId": -3,
+            "quantity": 1
+        }
+    },
+    {
+        "desc": "purposeId is not numeric",
+        "code": "INVALID",
+        "field": "purposeId",
+        "errMsg": "Invalid number",
+        "transaction": {
+            "tDate": "2015-01-25 14:14:14",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -0.50,
+            "note": "Test booking 1 espresso",
+            "purposeId": "a",
+            "quantity": 1
+        }
+    },
+    {
+        "desc": "quantity is missing",
+        "code": "MISSING",
+        "field": "quantity",
+        "errMsg": "Field is required",
+        "transaction": {
+            "tDate": "2015-01-25 14:14:14",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -0.50,
+            "note": "Test booking 1 espresso",
+            "purposeId": 3
+        }
+    },
+    {
+        "desc": "quantity is not numeric",
+        "code": "INVALID",
+        "field": "quantity",
+        "errMsg": "Invalid number",
+        "transaction": {
+            "tDate": "2015-01-25 14:14:14",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -0.50,
+            "note": "Test booking 1 espresso",
+            "purposeId": 3,
+            "quantity": "5%/&"
+        }
+    },
+    {
+        "desc": "quantity is too low",
+        "code": "INVALID",
+        "field": "quantity",
+        "errMsg": "Invalid number",
+        "transaction": {
+            "tDate": "2015-01-25 14:14:14",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -0.50,
+            "note": "Test booking 1 espresso",
+            "purposeId": 3,
+            "quantity": 0
+        }
+    },
+    {
+        "desc": "quantity is too big",
+        "code": "INVALID",
+        "field": "quantity",
+        "errMsg": "Invalid number",
+        "transaction": {
+            "tDate": "2015-01-25 14:14:14",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -0.50,
+            "note": "Test booking 1 espresso",
+            "purposeId": 3,
+            "quantity": 11
+        }
+    }
+]

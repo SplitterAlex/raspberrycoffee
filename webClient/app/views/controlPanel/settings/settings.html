@@ -1,0 +1,325 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 class="page-header">
+            Settings
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-xs-12" ng-controller="KeysCtrl">
+            <div class="well">
+                <h3><i class="fa fa-key"></i> Your keys</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Key (in HEX)</th>
+                            <th>Time added</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="key in keys">
+                            <td>{{ key.nfcKey }}</td>
+                            <td>{{ key.dateAdded.slice(0,19).replace('T', ' ') }}</td>
+                            <td><a href="javascript:void(0)" ng-click="deleteKey(key.id)">delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="alert text-center" 
+                     role="alert" 
+                     ng-class="{'alert-warning': !keys.length, 'alert-danger': error.show}"
+                     ng-show="!keys.length || error.show">
+                    <strong><i class="fa fa-info-circle"></i> {{error.message}}</strong>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form class="form-inline" name="addNewKeyForm" novalidate>
+                            <div class="form-group">
+                                <label for="addNewKey">Add new key here </label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       name="addNewKeyInput" 
+                                       id="addNewKeyInput" 
+                                       ng-model="newKey" 
+                                       placeholder="Key (in HEX)" 
+                                       ng-pattern="/^[A-Fa-f0-9]{1,32}$/" 
+                                       required>
+                            </div>
+                            <button type="submit" 
+                                    class="btn btn-primary" 
+                                    ng-click="saveKey()" 
+                                    ng-disabled="!addNewKeyForm.addNewKeyInput.$dirty || addNewKeyForm.addNewKeyInput.$error.pattern">
+                                Save
+                            </button>
+                        </form>
+                        <span class="text-warning" ng-show="addNewKeyForm.addNewKeyInput.$dirty && addNewKeyForm.addNewKeyInput.$error.pattern">Only HEX characters (max. 32) are allowed. </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well" ng-controller="UsergroupCtrl">
+                <h3><i class="fa fa-users"></i> Usergroup</h3>
+                <div class="container-fluid">
+                    <p>
+                        <strong>At the moment you are in group: </strong> {{user.groupName}}
+                    </p>
+                    <form class="form-inline">
+                        <div class="inline-group">
+                            <div class="form-group">
+                                <select class="form-control" name="group-category" ng-model="selectedGroup" ng-options="opt as opt.label for opt in options" required>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" ng-click="changeUsergroup()">Change</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="alert text-center" 
+                         ng-show="success || error"
+                         ng-class="{'alert-success': success, 'alert-danger': error}"
+                         style="margin-top: 10px">
+                        <i class="fa fa-info-circle"></i> {{ respMessage }}
+                    </div>
+                </div>
+            </div>
+            <div class="well" ng-controller="PrivacyCtrl">
+                <h3><i class="fa fa-user-secret"></i> Privacy</h3>
+                <h4> <u>Timestamp</u></h4>
+                <div class="container-fluid">
+                    <p><strong>Currently used precision: </strong> <span current-time></span></p>
+                    <div class="form-inline">
+                        <label for="timestamp-precision">Transactions are tracked using the following precision: </label>
+                        <div class="inline-group">
+                            <div class="form-group">
+                                <select class="form-control" name="timestamp-precision" ng-model="selectedPrecision" ng-options="opt as opt.label for opt in options" required>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" ng-click="changeTimestampPrecision()">Change</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert text-center" 
+                         ng-show="timestampSuccess || timestampError"
+                         ng-class="{'alert-success': timestampSuccess, 'alert-danger': timestampError}"
+                         style="margin-top: 10px">
+                        <i class="fa fa-info-circle"></i> {{respMessageTimestamp}}
+                    </div>
+                </div>
+
+                <h4><u>Ranking</u></h4>
+                <div class="container-fluid">
+                    <div class="form-group">
+                        <label for="ranking-toggle">Show my name in rankings:</label>
+                        <input bs-switch 
+                               name="ranking-toggle" 
+                               ng-model="showNameInRanking" 
+                               switch-size="mini" 
+                               switch-on-color="success" 
+                               switch-off-color="warning" 
+                               switch-on-text="ON" 
+                               switch-off-text="OFF" 
+                               type="checkbox">
+                    </div>
+                    <div class="alert text-center" 
+                         role="alert" 
+                         ng-show="rankingError || rankingSuccess"
+                         ng-class="{'alert-success': rankingSuccess, 'alert-danger': rankingError}"
+                         style="margin-top: 10px">
+                        <i class="fa fa-info-circle"></i> {{respMessageRanking}}
+                    </div>
+                </div>
+            </div>
+            <div class="well" ng-controller="PasswordCtrl">
+                <h3><i class="fa fa-lock"></i> Change password</h3>
+                <div class="container-fluid">
+                    <div class="alert text-center" 
+                         ng-show="success || error"
+                         ng-class="{'alert-success': success, 'alert-danger': error}"
+                         style="margin-top: 10px">
+                        <i class="fa fa-info-circle"></i> {{ respMessage }}
+                    </div>
+                    <div ng-hide="!user.ldapAuth">
+                        <div class="alert alert-info text-center" style="margin-top: 10px">
+                            <i class="fa fa-info-circle"></i>
+                            You are using LDAP (Your ZID-Credentials) for the authentication.
+                            <br>
+                            If you like to change your ZID-Password please visit: <a href="http://www.uibk.ac.at/zid/faq/passwort.html" target="_blank" class="alert-link">http://www.uibk.ac.at/zid/faq/passwort.html</a>
+                        </div>
+                    </div>
+                    <div ng-hide="user.ldapAuth">
+                        <form name="changePassword" class="form-horizontal">
+                            <div class="form-group" style="margin-top:10px">
+                                <label for="inputCurrentPassword" class="col-sm-4 control-label">Current password*</label>
+                                <div class="col-sm-8" color-feedback>
+                                    <input type="password" 
+                                           class="form-control" 
+                                           name="currentPassword" 
+                                           id="inputCurrentPassword"
+                                           ng-maxlength="100"
+                                           ng-model="currentPassword"
+                                           placeholder="Current password"
+                                           ng-model-options="{ debounce: 300 }"
+                                           required>
+                                    <span ng-show="changePassword.currentPassword.$error.maxlength" class="text-warning">max. 100 characters are allowed</span>
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-top:10px">
+                                <label for="inputNewPassword" class="col-sm-4 control-label">New password*</label>
+                                <div class="col-sm-8" color-feedback>
+                                    <input type="password" 
+                                           class="form-control" 
+                                           name="newPassword" 
+                                           id="inputNewPassword" 
+                                           ng-maxlength="100"
+                                           ng-model="newPassword"
+                                           placeholder="New password"
+                                           ng-model-options="{ debounce: 300 }"
+                                           required>
+                                    <span ng-show="changePassword.newPassword.$error.maxlength" class="text-warning">max. 100 characters are allowed</span>
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-top:10px">
+                                <label for="inputConfirmPassword" class="col-sm-4 control-label">Confirm password*</label>
+                                <div class="col-sm-8" color-feedback>
+                                    <input type="password" 
+                                           class="form-control" 
+                                           name="confirmPassword" 
+                                           id="inputConfirmPassword" 
+                                           ng-model="confirmPassword"
+                                           placeholder="Confirm password"
+                                           equals="{{newPassword}}"
+                                           ng-model-options="{ debounce: 300 }"
+                                           required>
+                                    <span class="text-warning" ng-show="changePassword.confirmPassword.$dirty && changePassword.$error.equals"><small>Entered passwords do not match.</small></span>
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-top:10px">
+                                <div class="col-sm-offset-4 col-sm-8">
+                                    <button type="submit"
+                                            class="btn btn-primary btn-block"
+                                            ng-disabled="!changePassword.$valid"
+                                            ng-click="updatePassword(currentPassword, newPassword)">
+                                        Change password
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-md-6 -->
+        
+
+        <div class="col-md-6">
+            <div class="well" ng-controller="ActiveCtrl">
+                <h3><i class="fa fa-minus-circle"></i> Active <small><a href="" ng-click="helpBlock = true"> What does this mean?</a></small></h3>
+
+                <div class="alert alert-info alert-dismissable" role="alert" ng-show="helpBlock">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong><i class="fa fa-info-circle"></i> Active: </strong> With the toggle button Active, you can set your user account either to "Active==ON" or "Active==OFF". If you set the toggle button to OFF, all the keys in your list will be locked, which means that it is not possible to operate with the coffee machine with your keys. You can use this feature, when you are e.g. on holiday.
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-5">
+                        <input bs-switch 
+                               ng-model="isActive" 
+                               switch-size="large" 
+                               switch-label="ACTIVE" 
+                               switch-off-color="warning" 
+                               switch-on-color="success" 
+                               type="checkbox">
+                    </div>
+                </div>
+                <div class="alert text-center" 
+                     role="alert"
+                     style="margin-top: 10px"
+                     ng-show="success || error"
+                     ng-class="{'alert-success': success, 'alert-danger': error}">
+                    <strong><i class="fa fa-info-circle"></i> {{ respMessage }}</strong>
+                </div>
+            </div>
+            <div class="well"  ng-controller="MailCtrl">
+                <h3><i class="fa fa-envelope-square"></i> Email</h3>
+                <h4>
+                    <u>Email notifications</u>
+                    <label class="sr-only" for="email-notifications">Enable email notification:</label>
+                    <input bs-switch 
+                               name="email-notifications" 
+                               ng-model="enableEmailNotification" 
+                               switch-size="mini" 
+                               switch-on-color="success" 
+                               switch-off-color="danger" 
+                               switch-on-text="ON" 
+                               switch-off-text="OFF" 
+                               type="checkbox">
+                </h4>
+                <div class="container-fluid">
+                    <form class="form-horizontal">
+                        <div class="form-group" ng-repeat="setting in emailSettings">
+                            <div class="col-sm-8">
+                                <label style="margin-bottom:0px" for="{{setting.identifier}}">{{setting.name}}:</label>
+                                <span style="margin-top: 0px;margin-bottom: 10px" class="help-block"><small>{{setting.helpText}}</small></span>
+                            </div>
+                            <div class="col-sm-4">
+                                <input bs-switch 
+                                    name="{{setting.identifier}}" 
+                                    ng-model="toggle[setting.id]" 
+                                    switch-size="mini" 
+                                    switch-on-color="success" 
+                                    switch-off-color="warning" 
+                                    switch-on-text="ON" 
+                                    switch-off-text="OFF" 
+                                    type="checkbox"
+                                    switch-readonly="{{!user.enableEmailNotification}}"
+                                    >
+                            </div>
+                        </div>
+                    </form>
+                    <div class="alert text-center" ng-class="{'alert-success': emailSuccess, 'alert-danger': emailError}" ng-show="emailError || emailSuccess" style="margin-top: 10px">
+                        <i class="fa fa-info-circle"></i> {{emailRespMessage}}
+                    </div>
+                </div>
+                <h4><u>Balance notification limit</u></h4>
+                <div class="container-fluid">
+                    <p><strong>Send notification when balance reaches: </strong> {{user.emailCreditLimitForNotification}} € </p>
+                    <div class="form-inline" name="balance-notification-form">
+                        <label for="debtLimitInput" class="sr-only">New balance limit: </label>
+                        <div class="inline-group">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input name="balanceNotificationLimitInput" 
+                                           type="text" 
+                                           class="form-control" 
+                                           placeholder="Enter new limit here" 
+                                           ng-model="newLimit">
+                                    <span class="input-group-addon"><i class="fa fa-euro"></i></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" ng-click="changeBalanceNotificationLimit(newLimit)">Change</button>
+                            </div>
+                        </div>
+                        <span class="helb-block text-warning" ng-show="validation.show">{{validation.message}}</span>
+                    </div>
+                    <div class="alert text-center" ng-class="{'alert-success': limitSuccess, 'alert-danger': limitError}" ng-show="limitError || limitSuccess" style="margin-top: 10px">
+                        <i class="fa fa-info-circle"></i> {{limitRespMessage}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->

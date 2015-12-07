@@ -1,0 +1,238 @@
+[
+    {
+        "desc": "date has the wrong format",
+        "url": "/pi/authentication",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "date",
+        "errMsg": "Invalid characters",
+        "data": {
+            "date": "01-12-2015 312:34:34",
+            "key": "ABCDEF123"
+        }
+    },
+    {
+        "desc": "date is missing",
+        "url": "/pi/authentication",
+        "errorCode": "validation failed",
+        "code": "MISSING",
+        "field": "date",
+        "errMsg": "Field is required",
+        "data": {
+            "key": "ABCDEF123"
+        }
+    },
+    {
+        "desc": "key is missing",
+        "url": "/pi/authentication",
+        "errorCode": "validation failed",
+        "code": "MISSING",
+        "field": "key",
+        "errMsg": "Field is required",
+        "data": {
+            "date": "2015-06-01 12:12:12"
+        }
+    },
+    {
+        "desc": "authenticated is missing",
+        "url": "/pi/addBooking",
+        "errorCode": "validation failed",
+        "code": "MISSING",
+        "field": "authenticated",
+        "errMsg": "Field is required",
+        "data": {
+            "user_id": 999999,
+            "key": "ABCDEF123",
+            "date": "2015-06-01 12:12:12",
+            "item_code": 1
+        }
+    },
+    {
+        "desc": "authenticated is not a valid boolean",
+        "url": "/pi/addBooking",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "authenticated",
+        "errMsg": "Invalid boolean",
+        "data": {
+            "authenticated": "ture",
+            "user_id": 999999,
+            "key": "ABCDEF123",
+            "date": "2015-06-01 12:12:12",
+            "item_code": 1
+        }
+    },
+    {
+        "desc": "user_id is missing",
+        "url": "/pi/addBooking",
+        "errorCode": "validation failed",
+        "code": "MISSING",
+        "field": "user_id",
+        "errMsg": "Field is required",
+        "data": {
+            "authenticated": true,
+            "key": "ABCDEF123",
+            "date": "2015-06-01 12:12:12",
+            "item_code": 1
+        }
+    },
+    {
+        "desc": "user_id is not numeric",
+        "url": "/pi/addBooking",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "user_id",
+        "errMsg": "Invalid number",
+        "data": {
+            "authenticated": "true",
+            "user_id": "99999A",
+            "key": "ABCDEF123",
+            "date": "2015-06-01 12:12:12",
+            "item_code": 1
+        }
+    },
+    {
+        "desc": "user_id is must be greater than 111111",
+        "url": "/pi/addBooking",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "user_id",
+        "errMsg": "Invalid number",
+        "data": {
+            "authenticated": "true",
+            "user_id": 1111,
+            "key": "ABCDEF123",
+            "date": "2015-06-01 12:12:12",
+            "item_code": 1
+        }
+    },
+    {
+        "desc": "error_code is missing",
+        "url": "/pi/addBooking",
+        "errorCode": "validation failed",
+        "code": "MISSING",
+        "field": "error_code",
+        "errMsg": "Field is required",
+        "data": {
+            "authenticated": "false",
+            "key": "ABCDEF123",
+            "date": "2015-06-01 12:12:12",
+            "item_code": 1
+        }
+    },
+    {
+        "desc": "error_code is not numeric",
+        "url": "/pi/addBooking",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "error_code",
+        "errMsg": "Invalid number",
+        "data": {
+            "authenticated": "false",
+            "error_code": "AA12",
+            "key": "ABCDEF123",
+            "date": "2015-06-01 12:12:12",
+            "item_code": 1
+        }
+    },
+    {
+        "desc": "key is missing",
+        "url": "/pi/addBooking",
+        "errorCode": "validation failed",
+        "code": "MISSING",
+        "field": "key",
+        "errMsg": "Field is required",
+        "data": {
+            "authenticated": "true",
+            "user_id": 999999,
+            "date": "2015-06-01 12:12:12",
+            "item_code": 1
+        }
+    },
+    {
+        "desc": "key has the wrong format",
+        "url": "/pi/addBooking",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "key",
+        "errMsg": "Invalid characters",
+        "data": {
+            "authenticated": "true",
+            "user_id": 999999,
+            "key": "!§$%&/()=",
+            "date": "2015-06-01 12:12:12",
+            "item_code": 1
+        }
+    },
+    {
+        "desc": "date has the wrong format",
+        "url": "/pi/addBooking",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "date",
+        "errMsg": "Invalid characters",
+        "data": {
+            "authenticated": "true",
+            "user_id": 999999,
+            "key": "1234567",
+            "date": "2015/06/01 12:12:12",
+            "item_code": 1
+        }
+    },
+    {
+        "desc": "date is missing",
+        "url": "/pi/addBooking",
+        "errorCode": "validation failed",
+        "code": "MISSING",
+        "field": "date",
+        "errMsg": "Field is required",
+        "data": {
+            "authenticated": "true",
+            "user_id": 999999,
+            "key": "1234556",
+            "item_code": 1
+        }
+    },
+    {
+        "desc": "item_code is missing",
+        "url": "/pi/addBooking",
+        "errorCode": "validation failed",
+        "code": "MISSING",
+        "field": "item_code",
+        "errMsg": "Field is required",
+        "data": {
+            "authenticated": "true",
+            "user_id": 999999,
+            "key": "1234556",
+            "date": "2015-06-01 12:12:12"
+        }
+    },
+    {
+        "desc": "item_code is not numeric",
+        "url": "/pi/addBooking",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "item_code",
+        "errMsg": "Invalid number",
+        "data": {
+            "authenticated": "true",
+            "user_id": 999999,
+            "key": "1234556",
+            "date": "2015-06-01 12:12:12",
+            "item_code": "§"
+        }
+    },
+    {
+        "desc": "item_code is not defined in database",
+        "url": "/pi/addBooking",
+        "errorCode": "BadRequestError",
+        "errMsg": "ITEM with item_code: 87 is not defined in database",
+        "data": {
+            "authenticated": "true",
+            "user_id": 999999,
+            "key": "1234556",
+            "date": "2015-06-01 12:12:12",
+            "item_code": "87"
+        }
+    }
+]

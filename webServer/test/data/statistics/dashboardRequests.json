@@ -1,0 +1,188 @@
+[
+    {
+        "desc": "Get Dashboard from User 111126",
+        "url": "/user/111126/dashboard",
+        "queries": {
+            "groupId": "1"
+        },
+        "result": {
+            "globalRankingPlace": "1/15",
+            "groupRankingPlace": "1/11",
+            "investedMoney": "7.50",
+            "count": {
+                "global": 214,
+                "group": 14,
+                "user": 17
+            },
+            "mcc": {
+                "user": {
+                    "day": {
+                        "count": 2,
+                        "date": "Jun 23rd 15"
+                    },
+                    "week": {
+                        "count": 7,
+                        "date": "Jun 15th 15 -<br>Jun 21st 15"
+                    },
+                    "month": {
+                        "count": 11,
+                        "date": "Jun 2015"
+                    }
+                },
+                "global": {
+                    "day": {
+                        "count": 15,
+                        "date": "Jun 1st 15"
+                    },
+                    "week": {
+                        "count": 27,
+                        "date": "Jun 1st 15 -<br>Jun 7th 15"
+                    },
+                    "month": {
+                        "count": 74,
+                        "date": "Jun 2015"
+                    }
+                },
+                "group": {
+                    "day": {
+                        "count": 2,
+                        "date": "Jul 20th 15"
+                    },
+                    "week": {
+                        "count": 4,
+                        "date": "Jul 6th 15 -<br>Jul 12th 15"
+                    },
+                    "month": {
+                        "count": 7,
+                        "date": "Jul 2015"
+                    }
+                }
+            }
+
+        }
+    },
+    {
+        "desc": "Get Dashboard from User 111128",
+        "url": "/user/111128/dashboard",
+        "queries": {
+            "groupId": "1"
+        },
+        "result": {
+            "globalRankingPlace": "7/15",
+            "groupRankingPlace": "6/11",
+            "investedMoney": "7.50",
+            "count": {
+                "global": 214,
+                "group": 14,
+                "user": 13
+            },
+            "mcc": {
+                "user": {
+                    "day": {
+                        "count": 2,
+                        "date": "Jun 14th 15"
+                    },
+                    "week": {
+                        "count": 3,
+                        "date": "Jun 15th 15 -<br>Jun 21st 15"
+                    },
+                    "month": {
+                        "count": 6,
+                        "date": "Jun 2015"
+                    }
+                },
+                "global": {
+                    "day": {
+                        "count": 15,
+                        "date": "Jun 1st 15"
+                    },
+                    "week": {
+                        "count": 27,
+                        "date": "Jun 1st 15 -<br>Jun 7th 15"
+                    },
+                    "month": {
+                        "count": 74,
+                        "date": "Jun 2015"
+                    }
+                },
+                "group": {
+                    "day": {
+                        "count": 2,
+                        "date": "Jul 20th 15"
+                    },
+                    "week": {
+                        "count": 4,
+                        "date": "Jul 6th 15 -<br>Jul 12th 15"
+                    },
+                    "month": {
+                        "count": 7,
+                        "date": "Jul 2015"
+                    }
+                }
+            }
+
+        }
+    },
+    {
+        "desc": "Get Dashboard from User 111122",
+        "url": "/user/111122/dashboard",
+        "queries": {
+            "groupId": "1"
+        },
+        "result": {
+            "globalRankingPlace": "11/15",
+            "groupRankingPlace": "9/11",
+            "investedMoney": "7.50",
+            "count": {
+                "global": 214,
+                "group": 14,
+                "user": 8
+            },
+            "mcc": {
+                "user": {
+                    "day": {
+                        "count": 2,
+                        "date": "Jul 29th 15"
+                    },
+                    "week": {
+                        "count": 2,
+                        "date": "Jul 27th 15 -<br>Aug 2nd 15"
+                    },
+                    "month": {
+                        "count": 3,
+                        "date": "Jun 2015"
+                    }
+                },
+                "global": {
+                    "day": {
+                        "count": 15,
+                        "date": "Jun 1st 15"
+                    },
+                    "week": {
+                        "count": 27,
+                        "date": "Jun 1st 15 -<br>Jun 7th 15"
+                    },
+                    "month": {
+                        "count": 74,
+                        "date": "Jun 2015"
+                    }
+                },
+                "group": {
+                    "day": {
+                        "count": 2,
+                        "date": "Jul 20th 15"
+                    },
+                    "week": {
+                        "count": 4,
+                        "date": "Jul 6th 15 -<br>Jul 12th 15"
+                    },
+                    "month": {
+                        "count": 7,
+                        "date": "Jul 2015"
+                    }
+                }
+            }
+
+        }
+    }
+]

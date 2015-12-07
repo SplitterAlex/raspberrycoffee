@@ -1,0 +1,25 @@
+[
+    {
+        "desc": "Query property fromUser is not numeric",
+        "url": "/statistics/weekly",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "fromUser",
+        "errMsg": "Invalid number",
+        "queries": {
+            "fromUser": ".232",
+            "fromGroup": ""
+        }
+    },
+    {
+        "desc": "Query property fromGroup is not numeric",
+        "url": "/statistics/weekly",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "fromGroup",
+        "errMsg": "Invalid number",
+        "queries": {
+            "fromGroup": "=21"
+        }
+    }
+]

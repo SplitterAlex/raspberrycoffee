@@ -1,0 +1,98 @@
+[
+    {
+        "desc": "book 1 coffee",
+        "transaction": {
+            "tDate": "2015-01-25 12:12:12",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -0.50,
+            "note": "Test booking 1 coffee",
+            "purposeId": 1,
+            "quantity": 1
+        }
+        },
+    {
+        "desc": "book 1 coffee_large",
+        "transaction": {
+            "tDate": "2015-01-25 13:13:13",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -1,
+            "note": "Test booking 1 coffee large",
+            "purposeId": 2,
+            "quantity": 1
+        }
+        },
+    {
+        "desc": "book 1 espresso",
+        "transaction": {
+            "tDate": "2015-01-25 14:14:14",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -0.50,
+            "note": "Test booking 1 espresso",
+            "purposeId": 3,
+            "quantity": 1
+        }
+        },
+    {
+        "desc": "book 1 espresso large",
+        "transaction": {
+            "tDate": "2015-01-25 15:15:15",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -1.00,
+            "note": "Test booking 1 espresso large",
+            "purposeId": 4,
+            "quantity": 1
+        }
+        },
+    {
+        "desc": "book 1 latte",
+        "transaction": {
+            "tDate": "2015-01-25 16:16:16",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -0.50,
+            "note": "Test booking 1 latte",
+            "purposeId": 5,
+            "quantity": 1
+        }
+        },
+    {
+        "desc": "book 1 capp",
+        "transaction": {
+            "tDate": "2015-01-25 17:17:17",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": -0.50,
+            "note": "Test booking 1 cap",
+            "purposeId": 6,
+            "quantity": 1
+        }
+        },
+    {
+        "desc": "book 1 milk",
+        "transaction": {
+            "tDate": "2015-01-25 18:18:18",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": 0.00,
+            "note": "Test booking 1 milk",
+            "purposeId": 7,
+            "quantity": 1
+        }
+        },
+    {
+        "desc": "book 1 water",
+        "transaction": {
+            "tDate": "2015-01-25 19:19:19",
+            "fromTaker": 111112,
+            "toDepositor": 111113,
+            "amount": 0,
+            "note": "Test booking 1 water",
+            "purposeId": 8,
+            "quantity": 1
+        }
+        }
+    ]

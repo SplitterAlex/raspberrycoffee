@@ -1,0 +1,44 @@
+{
+    "database": {
+        "host": "localhost",
+        "user": "root",
+        "pwd": "enterTestDatabseUserPwD",
+        "databaseName": "enterTestDabaseNameHere",
+        "connectionLimit": 20,
+        "files": {
+            "schema": "../dataBaseSchema.sql",
+            "transactions": "/data/yourTransactionsAndAdminTransactions/inserts.sql",
+            "statistics": "/data/statistics/insertsStatistics.sql",
+            "weekStatistic": "/data/statistics/insertsWeekStatistic.sql",
+            "pi": "/data/pi/inserts.sql",
+            "users": "/data/users/inserts.sql"
+        }
+    },
+    "testUser": {
+        "userId": 111113,
+        "username": "testUser",
+        "firstname": "Max",
+        "lastname": "Mustermann",
+        "ldapAuth": false,
+        "email": "test@test.de",
+        "groupId": 1,
+        "password": "1234567",
+        "hashedPassword": "$2a$10$Xs1DQickEJc84RvesNbPAeLZyJQ4J3vwUQWcSqLLhl4QbuRn9KJoq"
+    },
+    "adminTestUser": {
+        "userId": 111112,
+        "username": "adminTestUser",
+        "firstname": "Otto",
+        "lastname": "Normalverbraucher",
+        "ldapAuth": false,
+        "email": "test@test.de",
+        "groupId": 3,
+        "password": "7654321",
+        "hashedPassword": "$2a$10$vL3s8cKj0kOUyxe9CkKWquk37PXJvoy.h3mCmsvpKcJZFlDSpGPoG"
+    },
+    "pi": {
+        "userId": 111140,
+        "username": "RaspberryPi",
+        "groupId": 1
+    }
+}

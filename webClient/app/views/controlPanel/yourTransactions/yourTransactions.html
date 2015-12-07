@@ -1,0 +1,127 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                           <i class="fa fa-money" style="color:green"></i> Your transactions
+                        </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <h3 class="filter-header"><i class="fa fa-filter"></i> Filter options</h3>
+
+        <div class="col-lg-4">
+            <div class="well">
+                <h4>Get transactions by key: </h4>
+
+                <div class="alert alert-warning" role="alert" ng-show="!keys.length">
+                    <strong><i class="fa fa-info-circle"></i> No keys found</strong>
+                </div>
+
+                <div ng-repeat="key in keys">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" 
+                                   ng-model="filter.keys[$index]" 
+                                   ng-true-value="'{{key.nfcKey}}'" 
+                                   ng-false-value="0" 
+                                   ng-init="filter.keys[$index] = 0" 
+                                   ng-click="activateFilter()"
+                                   ng-disabled="loading">
+                            {{ key.nfcKey }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-8">
+            <div class="well">
+                <h4>Get transactions by products: </h4>
+                <div class="purposeCheckboxes">
+                    <div class="alert alert-warning" role="alert" ng-show="!purposes.length">
+                        <strong><i class="fa fa-info-circle"></i> No products found</strong>
+                    </div>
+                    <label ng-repeat="purpose in purposes">
+                        <input type="checkbox" 
+                               ng-model="filter.purposes[$index]" 
+                               ng-true-value="{{purpose.id}}" 
+                               ng-false-value="0" 
+                               ng-init="filter.purposes[$index] = 0" 
+                               ng-checked="filter.purposes[$index] != 0" 
+                               ng-click="activateFilter()"
+                               ng-disabled="loading">
+                        {{ purpose.name }}
+                    </label>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-xs-12">
+            <strong>Select a range: </strong><button type="button"
+                    class="btn btn-default dropdown-toggle"
+                    date-range-picker
+                    ng-model="selectedRange"
+                    ng-disabled="loading"
+                    options="dateRangeOptions">
+            <i class="fa fa-calendar"></i>  {{displayRange.startDate}}  to  {{displayRange.endDate}}  <span class="caret"></span>
+            </button>
+        </div>
+    </div>
+    
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="text-center spinner" ng-hide="!loading">
+            <i class="fa fa-spinner fa-spin fa-5x"></i>
+        </div>
+        <div class="col-lg-12" ng-hide="loading" class="hide-fade">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped">
+                    <div ng-show="list.length == 30 || page > 0">
+                        <a href="" ng-click="back()" ng-hide="page == 0"><i class="fa fa-angle-double-left"></i> back</a>
+                        <a id="nextPage" ng-click="next()" ng-show="list.length == 30" href="">next <i class="fa fa-angle-double-right"></i></a>
+                    </div>
+                    <thead>
+                        <tr>
+                            <th><i class="fa fa-calendar"></i> Date</th>
+                            <th><i class="fa fa-user"></i> Originator</th>
+                            <th><i class="fa fa-euro"></i> Amount (SUM: {{sum}})</th>
+                            <th><i class="fa fa-file-text"></i> Note</th>
+                            <th><i class="fa fa-pencil"></i> Product</th>
+                            <th><i class="fa fa-key"></i> Key (HEX)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr table-color-feedback ng-repeat="transaction in list">
+                            <td beautify-date="{{transaction.tDate}}">{{beautifiedDate}}</td>
+                            <td>{{transaction.originator}}</td>
+                            <td calculate-sum="{{transaction.amount}}" class="text-right">{{transaction.amount}}</td>
+                            <td>{{transaction.note}}</td>
+                            <td>{{transaction.purposeName}}</td>
+                            <td>{{transaction.nfcKey}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="alert alert-danger" role="alert" ng-show="error">
+                <strong><i class="fa fa-info-circle"></i> {{respMessage}}</strong>
+            </div>
+            <div class="alert alert-warning" role="alert" ng-show="!list.length">
+                <strong><i class="fa fa-info-circle"></i> No transactions found</strong>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container-fluid -->

@@ -1,0 +1,127 @@
+[
+    {
+        "desc": "Sent not authenticated booking - Key is not registered",
+        "url": "/pi/addBooking",
+        "data": {
+            "authenticated": "false",
+            "error_code": 501,
+            "key": "99ABCDEF99",
+            "date": "2015-01-01 01:01:01",
+            "item_code": 1
+        },
+        "result": {
+            "time": 10000,
+            "msg1": "Coffee",
+            "msg2": " booked. Thanks"
+        },
+        "shouldStoredInDataBase": {
+            "tDate": "2015-01-01 01:01:01",
+            "nfcKey": "99ABCDEF99",
+            "fromTaker": 111140,
+            "toDepositor": 111140,
+            "purposeId": 1,
+            "amount": -0.5,
+            "note": "No user found with nfcKey: \"99ABCDEF99\""
+        }
+    },
+    {
+        "desc": "Sent authenticated booking - But user is deleted",
+        "url": "/pi/addBooking",
+        "data": {
+            "authenticated": "true",
+            "user_id": 111145,
+            "key": "111145A",
+            "date": "2015-01-01 02:02:02",
+            "item_code": 2
+        },
+        "result": {
+            "time": 10000,
+            "msg1": "Coffee_Large",
+            "msg2": " booked. Thanks"
+        },
+        "shouldStoredInDataBase": {
+            "tDate": "2015-01-01 02:02:02",
+            "nfcKey": "111145A",
+            "fromTaker": 111140,
+            "toDepositor": 111140,
+            "purposeId": 2,
+            "amount": -1,
+            "note": "User \"111145\" was deleted"
+        }
+    },
+    {
+        "desc": "Sent booking to user with fullTimeStamp",
+        "url": "/pi/addBooking",
+        "data": {
+            "authenticated": "true",
+            "user_id": 111146,
+            "key": "111146A",
+            "date": "2015-10-12 03:03:03",
+            "item_code": 5
+        },
+        "result": {
+            "time": 10000,
+            "msg1": "Espresso",
+            "msg2": "Balance: 4.50"
+        },
+        "shouldStoredInDataBase": {
+            "tDate": "2015-10-12 03:03:03",
+            "nfcKey": "111146A",
+            "fromTaker": 111140,
+            "toDepositor": 111146,
+            "purposeId": 3,
+            "amount": -0.5,
+            "note": "coffee machine south kitchen"
+        }
+    },
+    {
+        "desc": "Sent booking to user with monthlyTimeStamp",
+        "url": "/pi/addBooking",
+        "data": {
+            "authenticated": "true",
+            "user_id": 111147,
+            "key": "111147A",
+            "date": "2015-10-12 04:04:04",
+            "item_code": 6
+        },
+        "result": {
+            "time": 10000,
+            "msg1": "Espresso_Large",
+            "msg2": "Balance: 4.00"
+        },
+        "shouldStoredInDataBase": {
+            "tDate": "2015-10-01 00:00:00",
+            "nfcKey": "111147A",
+            "fromTaker": 111140,
+            "toDepositor": 111147,
+            "purposeId": 4,
+            "amount": -1,
+            "note": "coffee machine south kitchen"
+        }
+    },
+    {
+        "desc": "Sent booking to user with dailyTimeStamp",
+        "url": "/pi/addBooking",
+        "data": {
+            "authenticated": "true",
+            "user_id": 111148,
+            "key": "111148A",
+            "date": "2015-10-12 05:05:05",
+            "item_code": 8
+        },
+        "result": {
+            "time": 10000,
+            "msg1": "Latte",
+            "msg2": "Balance: 4.50"
+        },
+        "shouldStoredInDataBase": {
+            "tDate": "2015-10-12 00:00:00",
+            "nfcKey": "111148A",
+            "fromTaker": 111140,
+            "toDepositor": 111148,
+            "purposeId": 5,
+            "amount": -0.5,
+            "note": "coffee machine south kitchen"
+        }
+    }
+]

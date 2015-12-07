@@ -1,0 +1,3 @@
+controller/*.o
+controller/coffee_controller
+controller/tmp_backup_file

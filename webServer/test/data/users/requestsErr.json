@@ -1,0 +1,35 @@
+[
+    {
+        "desc": "Query property search has the wrong format",
+        "url": "/user",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "search",
+        "errMsg": "Invalid characters",
+        "queries": {
+            "search": "%ale#"
+        }
+    },
+    {
+        "desc": "Query property search has the wrong format - too long",
+        "url": "/user",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "search",
+        "errMsg": "Invalid characters",
+        "queries": {
+            "search": "asdfasdfasdfasdfasdfasdfasdfasdfasf"
+        }
+    },
+    {
+        "desc": "Query property search has the wrong format - too long",
+        "url": "/user",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "search",
+        "errMsg": "Invalid characters",
+        "queries": {
+            "search": "/alexander"
+        }
+    }
+]

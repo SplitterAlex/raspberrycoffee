@@ -1,0 +1,57 @@
+[
+    {
+        "desc": "Get transactions from 2014-07-01 to 2014-07-31, should get 0 entries",
+        "url": "/admin/transactions",
+        "queries": {
+            "startDate": "2014-07-01",
+            "endDate": "2014-07-31"
+        },
+        "result": {
+            "length": 0
+        }
+    },
+    {
+        "desc": "Get transactions , should get 90 entries (max 200)",
+        "url": "/admin/transactions",
+        "queries": {
+            "startDate": "",
+            "endDate": ""
+        },
+        "result": {
+            "length": 90
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31, should get 90 entries",
+        "url": "/admin/transactions",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31"
+        },
+        "result": {
+            "length": 90
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-01, should get 4 entries",
+        "url": "/admin/transactions",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-01"
+        },
+        "result": {
+            "length": 4
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-20 to 2015-07-28, should get 31 entries",
+        "url": "/admin/transactions",
+        "queries": {
+            "startDate": "2015-07-20",
+            "endDate": "2015-07-28"
+        },
+        "result": {
+            "length": 31
+        }
+    }
+]

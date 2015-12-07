@@ -1,0 +1,56 @@
+[
+    {
+        "desc": "Get global week statistic",
+        "url": "/statistics/weekly",
+        "queries": {
+            "fromGroup": "",
+            "fromUser": ""
+        },
+        "result": {
+            "dataIndexMap":["Total","Coffee","Espresso","Latte","Cappuccino"],
+            "data": {
+                "Total": [[0, 1, 0, 0, 0, 4, 2],[2, 3, 0, 0, 0, 2, 0]],
+                "Coffee": [[0, 1, 0, 0, 0, 2, 1],[0, 2, 0, 0, 0, 0, 0]],
+                "Espresso": [[0, 0, 0, 0, 0, 2, 0],[1, 0, 0, 0, 0, 0, 0]],
+                "Latte": [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 1, 0]],
+                "Cappuccino": [[0, 0, 0, 0, 0, 0, 1],[1, 1, 0, 0, 0, 1, 0]]
+            }
+        }
+    },
+    {
+        "desc": "Get global week statistic from group 1",
+        "url": "/statistics/weekly",
+        "queries": {
+            "fromGroup": "1",
+            "fromUser": ""
+        },
+        "result": {
+            "dataIndexMap":["Total","Coffee","Espresso","Latte","Cappuccino"],
+            "data": {
+                "Total":        [[0, 1, 0, 0, 0, 2, 2],[2, 2, 0, 0, 0, 2, 0]],
+                "Coffee":       [[0, 1, 0, 0, 0, 0, 1],[0, 2, 0, 0, 0, 0, 0]],
+                "Espresso":     [[0, 0, 0, 0, 0, 2, 0],[1, 0, 0, 0, 0, 0, 0]],
+                "Latte":        [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 1, 0]],
+                "Cappuccino":   [[0, 0, 0, 0, 0, 0, 1],[1, 0, 0, 0, 0, 1, 0]]
+            }
+        }
+    },
+    {
+        "desc": "Get global week statistic from group 1",
+        "url": "/statistics/weekly",
+        "queries": {
+            "fromGroup": "",
+            "fromUser": "111120"
+        },
+        "result": {
+            "dataIndexMap":["Total","Coffee","Espresso","Latte","Cappuccino"],
+            "data": {
+                "Total": [[0, 0, 0, 0, 0, 2, 1],[1, 0, 0, 0, 0, 0, 1]],
+                "Coffee": [[0, 0, 0, 0, 0, 2, 1],[0, 0, 0, 0, 0, 0, 0]],
+                "Espresso": [[0, 0, 0, 0, 0, 0, 0],[1, 0, 0, 0, 0, 0, 0]],
+                "Latte": [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 1]],
+                "Cappuccino": [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]]
+            }
+        }
+    }
+]

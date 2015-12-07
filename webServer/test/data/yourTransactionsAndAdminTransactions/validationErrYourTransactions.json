@@ -1,0 +1,89 @@
+[
+    {
+        "desc": "endDate is missing",
+        "errorCode": "validation failed",
+        "code": "MISSING",
+        "field": "endDate",
+        "errMsg": "Field is required",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-06-01",
+            "endDate": ""
+        }
+    },
+    {
+        "desc": "endDate has the wrong format",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "endDate",
+        "errMsg": "Invalid characters",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-06-01",
+            "endDate": "06-01-2015"
+        }
+    },
+    {
+        "desc": "startDate is missing",
+        "errorCode": "validation failed",
+        "code": "MISSING",
+        "field": "startDate",
+        "errMsg": "Field is required",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "endDate": "2015-06-01",
+            "startDate": ""
+        }
+    },
+    {
+        "desc": "startDate has the wrong format",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "startDate",
+        "errMsg": "Invalid characters",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "endDate": "2015-06-01",
+            "startDate": "2015/01/01"
+        }
+    },
+    {
+        "desc": "key has the wrong format",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "key",
+        "errMsg": "Invalid characters",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "endDate": "2015-06-01",
+            "startDate": "2015-01-01",
+            "key": "*%&§%§%"
+        }
+    },
+    {
+        "desc": "purpose is not numeric",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "purpose",
+        "errMsg": "Invalid number",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "endDate": "2015-06-01",
+            "startDate": "2015-01-01",
+            "key": "ABCDEF",
+            "purpose": "1a"
+        }
+    },
+    {
+        "desc": "startDate is > then endDate",
+        "errorCode": "BadRequestError",
+        "errMsg": "Range between dates is negativ",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "endDate": "2015-01-01",
+            "startDate": "2015-05-01",
+            "key": "ABCDEF",
+            "purpose": "1"
+        }
+    }
+]

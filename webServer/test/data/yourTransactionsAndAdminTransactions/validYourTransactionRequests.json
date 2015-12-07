@@ -1,0 +1,267 @@
+[
+    {
+        "desc": "Get transactions from 2014-07-01 to 2014-07-31, should get 0 entries",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2014-07-01",
+            "endDate": "2014-07-31"
+        },
+        "result": {
+            "length": 0
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31 POS: 0, should get 30 entries",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31"
+        },
+        "result": {
+            "length": 30
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31 POS: 30, should get 30 entries",
+        "url": "/user/111113/transaction/30",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31"
+        },
+        "result": {
+            "length": 30
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31 POS: 60, should get 30 entries",
+        "url": "/user/111113/transaction/60",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31"
+        },
+        "result": {
+            "length": 30
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31 POS: 90, should get 0 entries",
+        "url": "/user/111113/transaction/90",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31"
+        },
+        "result": {
+            "length": 0
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31 POS: 0 Purpose: Coffee, should get 11 entries",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31",
+            "purpose": 1
+        },
+        "result": {
+            "length": 11
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31 POS: 0 Purpose: Coffee large, should get 11 entries",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31",
+            "purpose": 2
+        },
+        "result": {
+            "length": 11
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31 POS: 0 Purpose: Espresso, should get 13 entries",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31",
+            "purpose": 3
+        },
+        "result": {
+            "length": 13
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31 POS: 0 Purpose: Espresso large, should get 13 entries",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31",
+            "purpose": 4
+        },
+        "result": {
+            "length": 13
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31 POS: 0 Purpose: Latte, should get 10 entries",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31",
+            "purpose": 5
+        },
+        "result": {
+            "length": 10
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31 POS: 0 Purpose: Capp, should get 12 entries",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31",
+            "purpose": 6
+        },
+        "result": {
+            "length": 12
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31 POS: 0 Purpose: Credit, should get 10 entries",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31",
+            "purpose": 9
+        },
+        "result": {
+            "length": 10
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31 POS: 0 Purpose: Debit, should get 10 entries",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31",
+            "purpose": 10
+        },
+        "result": {
+            "length": 10
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31 POS: 0 Key: ABCDEF123, should get 30 entries",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31",
+            "key": "ABCDEF123"
+        },
+        "result": {
+            "length": 30
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31 POS: 30 Key: ABCDEF123, should get 30 entries",
+        "url": "/user/111113/transaction/30",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31",
+            "key": "ABCDEF123"
+        },
+        "result": {
+            "length": 30
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31 POS: 0 Key: ABCDEF123 Purpose: Coffee, should get 10 entries",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31",
+            "key": "ABCDEF123",
+            "purpose": 1
+        },
+        "result": {
+            "length": 10
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31 POS: 0 Key: ABCDEF123 Purpose: Coffee&Latte, should get 10 entries",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31",
+            "key": "ABCDEF123",
+            "purpose": [1,5]
+        },
+        "result": {
+            "length": 20
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31 POS: 0 Key: ABCDEF123&123ABCDEF Purpose: Coffee&Latte, should get 21 entries",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31",
+            "key": ["ABCDEF123","123ABCDEF"],
+            "purpose": [1,5]
+        },
+        "result": {
+            "length": 21
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-07 POS: 0 Key: ABCDEF123&123ABCDEF Purpose: Coffee&Latte, should get 5 entries",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-07",
+            "key": ["ABCDEF123","123ABCDEF"],
+            "purpose": [1,5]
+        },
+        "result": {
+            "length": 5
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-01 to 2015-07-31 POS: 0 Key: 123ABCDEF Purpose: ALL, should get 10 entries",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-07-01",
+            "endDate": "2015-07-31",
+            "key": ["123ABCDEF"],
+            "purpose": [1,2,3,4,5,6,7,8]
+        },
+        "result": {
+            "length": 10
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-07 to 2015-07-07 POS: 0 Purpose: Credit&Debit, should get 0 entries",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-07-07",
+            "endDate": "2015-07-07",
+            "purpose": [9,10]
+        },
+        "result": {
+            "length": 0
+        }
+    },
+    {
+        "desc": "Get transactions from 2015-07-09 to 2015-07-09 POS: 0 Purpose: Credit&Debit, should get 2 entries",
+        "url": "/user/111113/transaction/0",
+        "queries": {
+            "startDate": "2015-07-09",
+            "endDate": "2015-07-09",
+            "purpose": [9,10]
+        },
+        "result": {
+            "length": 2
+        }
+    }
+    
+]

@@ -1,0 +1,96 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                           <i class="fa fa-money" style="color:green"></i> Transactions
+                        </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+    
+    <div class="row">
+        <div class="col-xs-12">
+            <button type="button"
+                    class="btn btn-default"
+                    ng-class="{disabled: loading, active: defaultButtonIsActive}"
+                    ng-click="fetchTransactions();defaultButtonIsActive=true">
+            <strong>Show last 200 transactions </strong>
+            </button>
+            <button type="button"
+                    class="btn btn-default dropdown-toggle"
+                    date-range-picker
+                    ng-model="selectedRange"
+                    ng-class="{disabled: loading}"
+                    options="dateRangeOptions"
+                    ng-click="defaultButtonIsActive=false">
+            <strong>or select a range: </strong> <i class="fa fa-calendar"></i>  {{displayRange.startDate}}  to  {{displayRange.endDate}}  <span class="caret"></span>
+            </button>
+        </div>
+    </div>
+    
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="text-center spinner" ng-hide="!loading">
+            <i class="fa fa-spinner fa-spin fa-5x"></i>
+        </div>
+        <div class="col-lg-12" ng-hide="loading" class="hide-fade">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped table-condensed">
+                    <thead>
+                        <tr>
+                            <th style="white-space: nowrap">
+                                ID
+                                <span><a href="javascript:void(0)" ng-click="predicate='-id'; reverse=false"><i class="fa fa-arrow-down"></i></a>
+                                <a href="javascript:void(0)" ng-click="predicate='id'; reverse=false"><i class="fa fa-arrow-up"></i></a>
+                            </span></th>
+                            <th>Date</th>
+                            <th>
+                                Originator
+                                <a href="javascript:void(0)" ng-click="predicate='-originator'; reverse=false"><i class="fa fa-arrow-down"></i></a>
+                                <a href="javascript:void(0)" ng-click="predicate='originator'; reverse=false"><i class="fa fa-arrow-up"></i></a>
+                            </th>
+                            <th>
+                                Depositor
+                                <a href="javascript:void(0)" ng-click="predicate='-depositor'; reverse=false"><i class="fa fa-arrow-down"></i></a>
+                                <a href="javascript:void(0)" ng-click="predicate='depositor'; reverse=false"><i class="fa fa-arrow-up"></i></a>
+                            </th>
+                            <th>Amount (SUM: {{sum}})</th>
+                            <th>Note</th>
+                            <th>
+                                Product
+                                <a href="javascript:void(0)" ng-click="predicate='-purposeName'; reverse=false"><i class="fa fa-arrow-down"></i></a>
+                                <a href="javascript:void(0)" ng-click="predicate='purposeName'; reverse=false"><i class="fa fa-arrow-up"></i></a>
+                            </th>
+                            <th>Key</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr table-color-feedback ng-repeat="transaction in list | orderBy:predicate:reverse">
+                            <td>{{transaction.id}}</td>
+                            <td beautify-date="{{transaction.tDate}}">{{beautifiedDate}}</td>
+                            <td>{{transaction.originator}}</td>
+                            <td>{{transaction.depositor}}</td>
+                            <td calculate-sum="{{transaction.amount}}" class="text-right">{{transaction.amount}}</td>
+                            <td>{{transaction.note}}</td>
+                            <td>{{transaction.purposeName}}</td>
+                            <td>{{transaction.nfcKey}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="alert alert-danger" role="alert" ng-show="error">
+                <strong><i class="fa fa-info-circle"></i> {{respMessage}}</strong>
+            </div>
+            <div class="alert alert-warning" role="alert" ng-show="!list.length">
+                <strong><i class="fa fa-info-circle"></i> No transactions found</strong>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container-fluid -->

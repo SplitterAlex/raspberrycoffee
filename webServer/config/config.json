@@ -1,0 +1,116 @@
+{
+    "port": "80",
+    "host": "0.0.0.0",
+    "database": {
+        "host": "localhost",
+        "user": "root",
+        "pwd": "secret",
+        "databaseName": "enterDatabaseNameHere",
+        "connectionLimit": 20,
+        "timezone": "utc"
+    },
+    "pi": [
+        {
+            "userId": 000000,
+            "tokenId": 000000
+        }
+    ],
+    "jwt": {
+        "exp": 1440,
+        "secret": "secret",
+        "piSecret": "piSecret"
+    },
+    "ldap": {
+        "host": "enterLDAPHostHere",
+        "port": "636",
+        "timeout": "2000",
+        "connectionTimeout": "5000"
+    },
+    "log4js": {
+        "enableDebugLog": true,
+        "config" : {
+            "appenders" : [
+                {
+                    "type": "file",
+                    "filename": "logs/webServer.log",
+                    "maxLogSize": 20480,
+                    "backups": 3,
+                    "category": "default"
+                },
+                {
+                    "type": "file",
+                    "filename": "logs/pi.log",
+                    "maxLogSize": 40960,
+                    "backups": 5,
+                    "category": "pi"
+                },
+                {
+                    "type": "file",
+                    "filename": "logs/database.log",
+                    "maxLogSize": 40960,
+                    "backups": 3,
+                    "category": "database"
+                },
+                {
+                    "type": "file",
+                    "filename": "logs/auth.log",
+                    "maxLogSize": 40960,
+                    "backups": 3,
+                    "category": "auth"
+                },
+                {
+                    "type": "file",
+                    "filename": "logs/user.log",
+                    "maxLogSize": 40960,
+                    "backups": 3,
+                    "category": "user"
+                },
+                {
+                    "type": "file",
+                    "filename": "logs/mailing.log",
+                    "maxLogSize": 40960,
+                    "backups": 3,
+                    "category": "mailing"
+                }
+            ]
+        }
+    },
+    "pMsgs": [
+        {
+            "desc": "User is blocked msg",
+            "duration": 8000,
+            "msg1": "You are blocked!",
+            "msg2": "Contact an Admin"
+        },
+        {
+            "desc": "User is not active",
+            "duration": 8000,
+            "msg1": "Account locked",
+            "msg2": " "
+        },
+        {
+            "desc": "No user according to key",
+            "duration": 10000,
+            "msg1": "Unknown Key",
+            "msg2": ""
+        },
+        {
+            "desc": "Booking completed",
+            "duration": 10000,
+            "msg1": "",
+            "msg2": "Balance: "
+        },
+        {
+            "desc": "Authentication Response",
+            "duration": 10000,
+            "msg1": "Hi ",
+            "msg2": "Balance: "
+        },
+        {
+            "desc": "User is deleted",
+            "duration": 10000,
+            "msg1": "Account deleted",
+            "msg2": "An admin can restore your account"
+        }
+    ]
+}

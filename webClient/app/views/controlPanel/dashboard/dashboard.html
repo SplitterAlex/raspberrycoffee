@@ -1,0 +1,296 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                            Dashboard <small>User Overview </small>
+                        </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-md-6">
+
+
+            <!-- Place all the warning and danger alerts here -->
+
+            <div ng-hide="user.isActive" class="alert alert-warning alert-dismissable">
+                <i class="fa fa-info-circle"></i>
+                <strong>Your user account is set to NOT ACTIVE </strong> Please note: In this state all your keys will be blocked.
+            </div>
+
+            <div class="alert alert-warning alert-dismissable" ng-show="user.groupId==null">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <i class="fa fa-info-circle"></i>
+                <strong>You didn't provide a group! </strong> To get the full experience and functionality, visit the <a href="#{{'cp.settings' | routeSegmentUrl}}" class="alert-link">Settings</a> and choose a group.
+            </div>
+
+            <div class="alert alert-danger" ng-show="user.isBlocked">
+                <i class="fa fa-info-circle"></i>
+                <strong>You are blocked! </strong> Please contact an admin.
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+            <div class="panel current-deposit-panel">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-euro fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">{{user.currentDeposit}}</div>
+                            <div>Your current account balance</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#{{'cp.yourTransactions' | routeSegmentUrl}}" >
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-flag-checkered fa-5x"></i></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">{{globalRankingPlace}}</div>
+                            <div>Your global ranking</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#{{'cp.charts.global' | routeSegmentUrl}}">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-flag-checkered fa-5x"></i></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">{{groupRankingPlace}}</div>
+                            <div>Your group ranking</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#{{'cp.charts.group' | routeSegmentUrl}}">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-money fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">{{investedMoney}} <i class="fa fa-euro"></i></div>
+                            <div>Your invested money so far</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#{{'cp.yourTransactions' | routeSegmentUrl}}">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading text-center" style="font-size: 25px; padding: 33px">
+                    Coffee counter
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-coffee fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right" style="line-height: 300%">
+                            <div class="row">
+                                <div class="text-left col-xs-2 medium">Global:</div>
+                                <div class="medium-huge text-center col-xs-10">{{count.global}} cups</div>
+                            </div>
+                            <div class="row">
+                                <div class="text-left col-xs-2 medium">Group:</div>
+                                <div class="medium-huge text-center col-xs-10">{{count.group}} cups</div>
+                            </div>
+                            <div class="row">
+                                <div class="text-left col-xs-2 medium">You:</div>
+                                <div class="medium-huge text-center col-xs-10">{{count.user}} cups</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <div class="panel with-nav-tabs panel-primary">
+                <div class="panel-heading">
+                    <div class="text-center" style="font-size: 25px; margin: 10px">Max. coffee consumption</div>
+                    <ul class="nav nav-tabs center-pills">
+                        <li ng-click="showMccTab=1" ng-class="{active: showMccTab==1}" ng-init="showMccTab=1"><a href="">Global</a>
+                        </li>
+                        <li ng-click="showMccTab=2" ng-class="{active: showMccTab==2}" ng-hide="!showGroup"><a href="">Group</a>
+                        </li>
+                        <li ng-click="showMccTab=3" ng-class="{active: showMccTab==3}"><a href="">You</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12" style="line-height: 300%">
+
+                            <div ng-hide="showMccTab!=1">
+                                <div class="row">
+                                    <div class="text-left col-xs-6 medium"><div style="line-height: 1.1" class="text-center">Day:<br>{{mcc.global.day.date}}</div></div>
+                                    <div class="medium-huge text-center col-xs-6">{{mcc.global.day.count}} cups</div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-left col-xs-6 medium"><div style="line-height: 1.1" class="text-center">Week:<br><span ng-bind-html="mcc.global.week.date"></span><br><br></div></div>
+                                    <div class="medium-huge text-center col-xs-6">{{mcc.global.week.count}} cups</div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-left col-xs-6 medium"><div style="line-height: 1.1" class="text-center">Month:<br>{{mcc.global.month.date}}</div></div>
+                                    <div class="medium-huge text-center col-xs-6">{{mcc.global.month.count}} cups</div>
+                                </div>
+                            </div>
+                            <div ng-hide="showMccTab!=2">
+                                <div class="row">
+                                    <div class="text-left col-xs-6 medium"><div style="line-height: 1.1" class="text-center">Day:<br>{{mcc.group.day.date}}</div></div>
+                                    <div class="medium-huge text-center col-xs-6">{{mcc.group.day.count}} cups</div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-left col-xs-6 medium"><div style="line-height: 1.1" class="text-center">Week:<br><span ng-bind-html="mcc.group.week.date"></span><br><br></div></div>
+                                    <div class="medium-huge text-center col-xs-6">{{mcc.group.week.count}} cups</div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-left col-xs-6 medium"><div style="line-height: 1.1" class="text-center">Month:<br>{{mcc.group.month.date}}</div></div>
+                                    <div class="medium-huge text-center col-xs-6">{{mcc.group.month.count}} cups</div>
+                                </div>
+                            </div>
+                            <div ng-hide="showMccTab!=3">
+                                <div class="row">
+                                    <div class="text-left col-xs-6 medium"><div style="line-height: 1.1" class="text-center">Day:<br>{{mcc.user.day.date}}</div></div>
+                                    <div class="medium-huge text-center col-xs-6">{{mcc.user.day.count}} cups</div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-left col-xs-6 medium"><div style="line-height: 1.1" class="text-center">Week:<br><span ng-bind-html="mcc.user.week.date"></span><br><br></div></div>
+                                    <div class="medium-huge text-center col-xs-6">{{mcc.user.week.count}} cups</div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-left col-xs-6 medium"><div style="line-height: 1.1" class="text-center">Month:<br>{{mcc.group.month.date}}</div></div>
+                                    <div class="medium-huge text-center col-xs-6">{{mcc.user.month.count}} cups</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <div class="panel with-nav-tabs panel-primary">
+                <div class="panel-heading">
+                    <div class="text-center" style="font-size: 25px; margin: 10px">Current coffee consumption</div>
+                    <ul class="nav nav-tabs center-pills">
+                        <li ng-click="showCccTab=1" ng-class="{active: showCccTab==1}" ng-init="showCccTab=1"><a href="">Global</a>
+                        </li>
+                        <li ng-click="showCccTab=2" ng-class="{active: showCccTab==2}" ng-hide="!showGroup"><a href="">Group</a>
+                        </li>
+                        <li ng-click="showCccTab=3" ng-class="{active: showCccTab==3}"><a href="">You</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12" style="line-height: 300%">
+
+                            <div ng-hide="showCccTab!=1">
+                                <div class="row">
+                                    <div class="text-left col-xs-6 medium"><div style="line-height: 1.1" class="text-center">Day:<br>{{ccc.global.day.date}}</div></div>
+                                    <div class="medium-huge text-center col-xs-6 text-center">{{ccc.global.day.count}} cups</div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-left col-xs-6 medium"><div style="line-height: 1.1" class="text-center">Week:<br><span ng-bind-html="ccc.global.week.date"></span><br><br></div></div>
+                                    <div class="medium-huge text-center col-xs-6 text-center">{{ccc.global.week.count}} cups</div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-left col-xs-6 medium"><div style="line-height: 1.1" class="text-center">Month:<br>{{ccc.global.month.date}}</div></div>
+                                    <div class="medium-huge text-center col-xs-6 text-center">{{ccc.global.month.count}} cups</div>
+                                </div>
+                            </div>
+                            <div ng-hide="showCccTab!=2">
+                                <div class="row">
+                                    <div class="text-left col-xs-6 medium"><div style="line-height: 1.1" class="text-center">Day:<br>{{ccc.group.day.date}}</div></div>
+                                    <div class="medium-huge text-center col-xs-6">{{ccc.group.day.count}} cups</div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-left col-xs-6 medium"><div style="line-height: 1.1" class="text-center">Week:<br><span ng-bind-html="ccc.group.week.date"></span><br><br></div></div>
+                                    <div class="medium-huge text-center col-xs-6">{{ccc.group.week.count}} cups</div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-left col-xs-6 medium"><div style="line-height: 1.1" class="text-center">Month:<br>{{ccc.group.month.date}}</div></div>
+                                    <div class="medium-huge text-center col-xs-6">{{ccc.group.month.count}} cups</div>
+                                </div>
+                            </div>
+                            <div ng-hide="showCccTab!=3">
+                                <div class="row">
+                                    <div class="text-left col-xs-6 medium"><div style="line-height: 1.1" class="text-center">Day:<br>{{ccc.user.day.date}}</div></div>
+                                    <div class="medium-huge text-center col-xs-6">{{ccc.user.day.count}} cups</div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-left col-xs-6 medium"><div style="line-height: 1.1" class="text-center">Week:<br><span ng-bind-html="ccc.user.week.date"></span><br><br></div></div>
+                                    <div class="medium-huge text-center col-xs-6">{{ccc.user.week.count}} cups</div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-left col-xs-6 medium"><div style="line-height: 1.1" class="text-center">Month:<br>{{ccc.user.month.date}}</div></div>
+                                    <div class="medium-huge text-center col-xs-6">{{ccc.user.month.count}} cups</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- /.row -->
+
+
+</div>
+<!-- /.container-fluid -->

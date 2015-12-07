@@ -1,0 +1,30 @@
+{
+  "name": "WebClient",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "2.1.4",
+    "angular": "^1.3.0",
+    "bootstrap": "~3.3.4",
+    "angular-animate": "^1.3.0",
+    "angular-cookies": "^1.3.0",
+    "angular-resource": "^1.3.0",
+    "angular-route": "^1.3.0",
+    "angular-sanitize": "^1.3.0",
+    "angular-touch": "^1.3.0",
+    "font-awesome": "~4.3.0",
+    "metisMenu": "~1.1.3",
+    "angular-chart.js": "~0.7.0",
+    "angular-bootstrap-switch": "~0.4.0",
+    "angular-daterangepicker": "~0.1.15",
+    "Chart.js": "1.0.2",
+    "moment": "~2.10.3",
+    "bootstrap-daterangepicker": "~1.3.21",
+    "angular-bootstrap-datetimepicker": "latest",
+    "angular-route-segment": "~1.5.0"
+  },
+  "devDependencies": {
+     "angular-mocks": "^1.3.0"
+  },
+  "appPath": "app",
+  "moduleName": "clientApp"
+}

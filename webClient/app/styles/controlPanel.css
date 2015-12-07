@@ -1,0 +1,303 @@
+
+/*!
+ * Start Bootstrap - SB Admin Bootstrap Admin Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Global Styles */
+
+body {
+    background-color: #f8f8f8;
+}
+
+#wrapper {
+    width: 100%;
+}
+
+#page-wrapper {
+    padding: 0 15px;
+    min-height: 568px;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    #page-wrapper {
+        position: inherit;
+        margin: 50px 0 0 200px;
+        padding: 0 30px;
+        border-left: 1px solid #e7e7e7;
+    }
+    
+    .cd-top {
+        height: 60px;
+        width: 60px;
+        right: 30px;
+        bottom: 30px;
+  }
+}
+
+
+
+/* alte css ... */
+
+.range_inputs input {
+    pointer-events:none;
+}
+
+.center-pills {
+    display: flex;
+    justify-content: center;
+}
+
+.huge {
+    font-size: 50px;
+    line-height: normal;
+}
+
+.medium-huge {
+    font-size: 25px;
+}
+
+.medium {
+    font-size: 15px;
+}
+
+.filter-header {
+    margin-left: 30px;
+}
+
+.purposeCheckboxes > label{
+    display:inline-block;
+    width:150px;
+}
+
+#nextPage {
+    float: right;
+}
+
+#newTransactionForm .form-group {
+    margin-bottom: 10px;
+}
+
+.negativ-amount {
+    color: #d9534f;
+}
+
+.positiv-amount {
+    color: green;
+}
+
+th {
+   white-space: nowrap;
+}
+
+.toggle-width {
+width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+    margin-bottom: 13px;
+ 
+}
+
+/* Flot Chart Containers */
+
+.flot-chart {
+    display: block;
+    height: 400px;
+}
+
+.flot-chart-content {
+    width: 100%;
+    height: 100%;
+}
+
+.textUppercase {
+    color: #8a6d3b;
+}
+
+/* Custom Colored Panels */
+
+.huge {
+    font-size: 40px;
+}
+.group-select-form {
+    margin: 15px;
+}
+
+.group-select-form button {
+    margin-left: 15px;
+}
+
+
+
+.switch {
+    width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.switch-header {
+    width: inherit;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.panel-primary .panel-heading {
+    color: #337ab7;
+    background-color: #f5f5f5;
+}
+
+.redBlockedSign {
+    color: #d9534f;
+}
+
+.greenBlockedSign {
+    color: #5cb85c;
+}
+
+.panel-green {
+    border-color: #5cb85c;
+}
+
+.panel-green .panel-body {
+    border-color: #5cb85c;
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+.panel-green a {
+    color: #5cb85c;
+}
+
+.panel-green a:hover {
+    color: #3d8b3d;
+}
+
+
+.panel-body {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+.panel-red {
+    border-color: #d9534f;
+}
+
+.panel-red .panel-body {
+    border-color: #d9534f;
+    color: #fff;
+    background-color: #d9534f;
+}
+
+.panel-red a {
+    color: #d9534f;
+}
+
+.panel-red a:hover {
+    color: #b52b27;
+}
+
+.panel-yellow {
+    border-color: #f0ad4e;
+}
+
+.panel-yellow .panel-body {
+    border-color: #f0ad4e;
+    color: #fff;
+    background-color: #f0ad4e;
+}
+
+.panel-yellow a {
+    color: #f0ad4e;
+}
+
+.panel-yellow a:hover {
+    color: #df8a13;
+}
+
+/*
+ *
+ */
+
+.panel.with-nav-tabs .panel-heading{
+    padding: 5px 5px 1px 5px;
+}
+.panel.with-nav-tabs .nav-tabs{
+	border-bottom: none;
+}
+.panel.with-nav-tabs .nav-justified{
+	margin-bottom: -1px;
+}
+
+.with-nav-tabs.panel-primary .nav-tabs > li > a,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:focus {
+    color: #337ab7;
+    background-color: #fff;
+}
+.with-nav-tabs.panel-primary .nav-tabs > .open > a,
+.with-nav-tabs.panel-primary .nav-tabs > .open > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > .open > a:focus,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:focus {
+	color: #fff;
+	background-color: #337ab7;
+	border-color: transparent;
+}
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a,
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a:focus {
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #428bca;
+	border-bottom-color: transparent;
+}
+
+
+
+/*
+ * Back to top css properties
+ */
+
+.cd-top {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background: #B8B8B8 url(../images/cd-top-arrow.svg) no-repeat center 50%;
+  visibility: hidden;
+  opacity: 0;
+  border-radius: 50%;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+}
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
+.cd-top:hover {
+  background-color: #1A1A1A;
+  opacity: 1;
+}

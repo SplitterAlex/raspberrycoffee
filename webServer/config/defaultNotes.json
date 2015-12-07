@@ -1,0 +1,45 @@
+{
+    "description" : "Default notes to display when a new order get filled at the webClient by an admin.  1=Coffee, 2=Coffee_Large, 3=Espresso, 4=Espresso_Large, 5=Latte, 6=Cappuccino, 7=Milk, 8=Water, 9=Credit, 10=Debit",
+    "defaultNotes": [
+        {
+            "id": 1,
+            "msg": "Manual booking - Coffee."
+        },
+        {
+            "id": 2,
+            "msg": "Manual booking - Coffee_Large."
+        },
+        {
+            "id": 3,
+            "msg": "Manual booking - Espresso."
+        },
+        {
+            "id": 4,
+            "msg": "Manual booking - Espresso_Large."
+        },
+        {
+            "id": 5,
+            "msg": "Manual booking - Latte."
+        },
+        {
+            "id": 6,
+            "msg": "Manual booking - Cappuccino."
+        },
+        {
+            "id": 7,
+            "msg": "Manual booking - Hot Milk."
+        },
+        {
+            "id": 8,
+            "msg": "Manual booking - Hot Water."
+        },
+        {
+            "id": 9,
+            "msg": "Thanks for the money, Anna Maria ;)"
+        },
+        {
+            "id": 10,
+            "msg": "Transfered balance from Strichliste, Anna Maria"
+        }
+    ]
+}

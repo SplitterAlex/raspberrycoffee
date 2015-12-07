@@ -1,0 +1,24 @@
+[
+    {
+        "desc": "Resource id is not numeric",
+        "url": "/user/12A12121/dashboard",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "id",
+        "errMsg": "Invalid number",
+        "queries": {
+            "fromGroup": "1"
+        }
+    },
+    {
+        "desc": "Query property groupId is not numeric",
+        "url": "/user/1111112/dashboard",
+        "errorCode": "validation failed",
+        "code": "INVALID",
+        "field": "groupId",
+        "errMsg": "Invalid number",
+        "queries": {
+            "groupId": "=21"
+        }
+    }
+]

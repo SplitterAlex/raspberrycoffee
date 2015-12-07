@@ -1,0 +1,670 @@
+{
+    "shouldStoredInDataBase": [
+        {
+            "desc": "Result from Booking N°1",
+            "entry": {
+                "tDate": "2015-01-01 12:12:12",
+                "fromTaker": 111140,
+                "toDepositor": 111142,
+                "amount": -0.5,
+                "purposeId": 1,
+                "nfcKey": "111142A"
+            }
+        },
+        {
+            "desc": "Result from Booking N°2",
+            "entry": {
+                "tDate": "2015-01-01 13:13:13",
+                "fromTaker": 111140,
+                "toDepositor": 111142,
+                "amount": -1,
+                "purposeId": 2,
+                "nfcKey": "111142B"
+            }
+        },
+        {
+            "desc": "Result from Booking N°3",
+            "entry": {
+                "tDate": "2015-01-01 14:14:14",
+                "fromTaker": 111140,
+                "toDepositor": 111142,
+                "amount": -0.5,
+                "purposeId": 3,
+                "nfcKey": "111142A"
+            }
+        },
+        {
+            "desc": "Result from Booking N°4",
+            "entry": {
+                "tDate": "2015-01-01 15:15:15",
+                "fromTaker": 111140,
+                "toDepositor": 111142,
+                "amount": -1,
+                "purposeId": 4,
+                "nfcKey": "111142B"
+            }
+        },
+        {
+            "desc": "Result from Booking N°5",
+            "entry": {
+                "tDate": "2015-01-01 16:16:16",
+                "fromTaker": 111140,
+                "toDepositor": 111142,
+                "amount": -0.5,
+                "purposeId": 5,
+                "nfcKey": "111142A"
+            }
+        },
+        {
+            "desc": "Result from Booking N°6",
+            "entry": {
+                "tDate": "2015-01-01 17:17:17",
+                "fromTaker": 111140,
+                "toDepositor": 111142,
+                "amount": -0.5,
+                "purposeId": 6,
+                "nfcKey": "111142B"
+            }
+        },
+        {
+            "desc": "Result from Booking N°7",
+            "entry": {
+                "tDate": "2015-01-01 18:18:18",
+                "fromTaker": 111140,
+                "toDepositor": 111142,
+                "amount": 0,
+                "purposeId": 7,
+                "nfcKey": "111142A"
+            }
+        },
+        {
+            "desc": "Result from Booking N°8",
+            "entry": {
+                "tDate": "2015-01-01 19:19:19",
+                "fromTaker": 111140,
+                "toDepositor": 111142,
+                "amount": 0,
+                "purposeId": 8,
+                "nfcKey": "111142B"
+            }
+        }
+    ],
+    "bookings": [
+        {
+            "desc": "Authenticate And Booking N°1 Coffee",
+            "authentication": {
+                "desc": "Authentication User A",
+                "url": "/pi/authentication",
+                "data": {
+                    "key": "111142A",
+                    "date": "2015-01-01 12:12:12"
+                },
+                "result": {
+                    "authenticated": true,
+                    "authorized": true,
+                    "user_id": 111142,
+                    "enabled_products": [
+                        {
+                            "id": 1,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 2,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 5,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 6,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 8,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 9,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 10,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 11,
+                            "is_enabled": true
+                    }
+                ],
+                    "job_to_display": {
+                        "time": 10000,
+                        "msg1": "Hi WithDebtLimit",
+                        "msg2": "Balance: 2.00"
+                    }
+                }
+            },
+            "booking": {
+                "desc": "Booking Coffee to User 111142",
+                "url": "/pi/addBooking",
+                "data": {
+                    "authenticated": "true",
+                    "user_id": 111142,
+                    "key": "111142A",
+                    "date": "2015-01-01 12:12:12",
+                    "item_code": 1
+                },
+                "result": {
+                    "time": 10000,
+                    "msg1": "Coffee",
+                    "msg2": "Balance: 1.50"
+                }
+
+            }
+    },
+        {
+            "desc": "Authenticate And Booking N°2 Coffee_Large",
+            "authentication": {
+                "desc": "Authentication User A",
+                "url": "/pi/authentication",
+                "data": {
+                    "key": "111142B",
+                    "date": "2015-01-01 13:13:13"
+                },
+                "result": {
+                    "authenticated": true,
+                    "authorized": true,
+                    "user_id": 111142,
+                    "enabled_products": [
+                        {
+                            "id": 1,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 2,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 5,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 6,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 8,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 9,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 10,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 11,
+                            "is_enabled": true
+                    }
+                ],
+                    "job_to_display": {
+                        "time": 10000,
+                        "msg1": "Hi WithDebtLimit",
+                        "msg2": "Balance: 1.50"
+                    }
+                }
+            },
+            "booking": {
+                "desc": "Booking Coffee_Large to User 111142",
+                "url": "/pi/addBooking",
+                "data": {
+                    "authenticated": "true",
+                    "user_id": 111142,
+                    "key": "111142B",
+                    "date": "2015-01-01 13:13:13",
+                    "item_code": 2
+                },
+                "result": {
+                    "time": 10000,
+                    "msg1": "Coffee_Large",
+                    "msg2": "Balance: 0.50"
+                }
+
+            }
+    },
+    {
+            "desc": "Authenticate And Booking N°3 Espresso",
+            "authentication": {
+                "desc": "Authentication User A",
+                "url": "/pi/authentication",
+                "data": {
+                    "key": "111142A",
+                    "date": "2015-01-01 14:14:14"
+                },
+                "result": {
+                    "authenticated": true,
+                    "authorized": true,
+                    "user_id": 111142,
+                    "enabled_products": [
+                        {
+                            "id": 1,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 2,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 5,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 6,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 8,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 9,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 10,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 11,
+                            "is_enabled": true
+                    }
+                ],
+                    "job_to_display": {
+                        "time": 10000,
+                        "msg1": "Hi WithDebtLimit",
+                        "msg2": "Balance: 0.50"
+                    }
+                }
+            },
+            "booking": {
+                "desc": "Booking Espresso to User 111142",
+                "url": "/pi/addBooking",
+                "data": {
+                    "authenticated": "true",
+                    "user_id": 111142,
+                    "key": "111142A",
+                    "date": "2015-01-01 14:14:14",
+                    "item_code": 5
+                },
+                "result": {
+                    "time": 10000,
+                    "msg1": "Espresso",
+                    "msg2": "Balance: 0.00"
+                }
+
+            }
+    },
+        {
+            "desc": "Authenticate And Booking N°4 Espresso_Large",
+            "authentication": {
+                "desc": "Authentication User A",
+                "url": "/pi/authentication",
+                "data": {
+                    "key": "111142B",
+                    "date": "2015-01-01 15:15:15"
+                },
+                "result": {
+                    "authenticated": true,
+                    "authorized": true,
+                    "user_id": 111142,
+                    "enabled_products": [
+                        {
+                            "id": 1,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 2,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 5,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 6,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 8,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 9,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 10,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 11,
+                            "is_enabled": true
+                    }
+                ],
+                    "job_to_display": {
+                        "time": 10000,
+                        "msg1": "Hi WithDebtLimit",
+                        "msg2": "Balance: 0.00"
+                    }
+                }
+            },
+            "booking": {
+                "desc": "Booking Espresso_Large to User 111142",
+                "url": "/pi/addBooking",
+                "data": {
+                    "authenticated": "true",
+                    "user_id": 111142,
+                    "key": "111142B",
+                    "date": "2015-01-01 15:15:15",
+                    "item_code": 6
+                },
+                "result": {
+                    "time": 10000,
+                    "msg1": "Espresso_Large",
+                    "msg2": "Balance: -1.00"
+                }
+
+            }
+    },
+        {
+            "desc": "Authenticate And Booking N°5 Latte",
+            "authentication": {
+                "desc": "Authentication User A",
+                "url": "/pi/authentication",
+                "data": {
+                    "key": "111142A",
+                    "date": "2015-01-01 16:16:16"
+                },
+                "result": {
+                    "authenticated": true,
+                    "authorized": true,
+                    "user_id": 111142,
+                    "enabled_products": [
+                        {
+                            "id": 1,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 2,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 5,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 6,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 8,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 9,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 10,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 11,
+                            "is_enabled": true
+                    }
+                ],
+                    "job_to_display": {
+                        "time": 10000,
+                        "msg1": "Hi WithDebtLimit",
+                        "msg2": "Balance: -1.00"
+                    }
+                }
+            },
+            "booking": {
+                "desc": "Booking Latte to User 111142",
+                "url": "/pi/addBooking",
+                "data": {
+                    "authenticated": "true",
+                    "user_id": 111142,
+                    "key": "111142A",
+                    "date": "2015-01-01 16:16:16",
+                    "item_code": 8
+                },
+                "result": {
+                    "time": 10000,
+                    "msg1": "Latte",
+                    "msg2": "Balance: -1.50"
+                }
+
+            }
+    },
+        {
+            "desc": "Authenticate And Booking N°6 Cappuccino",
+            "authentication": {
+                "desc": "Authentication User A",
+                "url": "/pi/authentication",
+                "data": {
+                    "key": "111142B",
+                    "date": "2015-01-01 17:17:17"
+                },
+                "result": {
+                    "authenticated": true,
+                    "authorized": true,
+                    "user_id": 111142,
+                    "enabled_products": [
+                        {
+                            "id": 1,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 2,
+                            "is_enabled": false
+                    },
+                        {
+                            "id": 5,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 6,
+                            "is_enabled": false
+                    },
+                        {
+                            "id": 8,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 9,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 10,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 11,
+                            "is_enabled": true
+                    }
+                ],
+                    "job_to_display": {
+                        "time": 10000,
+                        "msg1": "Hi WithDebtLimit",
+                        "msg2": "Balance: -1.50"
+                    }
+                }
+            },
+            "booking": {
+                "desc": "Booking Capp to User 111142",
+                "url": "/pi/addBooking",
+                "data": {
+                    "authenticated": "true",
+                    "user_id": 111142,
+                    "key": "111142B",
+                    "date": "2015-01-01 17:17:17",
+                    "item_code": 9
+                },
+                "result": {
+                    "time": 10000,
+                    "msg1": "Cappuccino",
+                    "msg2": "Balance: -2.00"
+                }
+
+            }
+    },
+        {
+            "desc": "Authenticate And Booking N°7 Milk",
+            "authentication": {
+                "desc": "Authentication User A",
+                "url": "/pi/authentication",
+                "data": {
+                    "key": "111142A",
+                    "date": "2015-01-01 18:18:18"
+                },
+                "result": {
+                    "authenticated": true,
+                    "authorized": true,
+                    "user_id": 111142,
+                    "enabled_products": [
+                        {
+                            "id": 1,
+                            "is_enabled": false
+                    },
+                        {
+                            "id": 2,
+                            "is_enabled": false
+                    },
+                        {
+                            "id": 5,
+                            "is_enabled": false
+                    },
+                        {
+                            "id": 6,
+                            "is_enabled": false
+                    },
+                        {
+                            "id": 8,
+                            "is_enabled": false
+                    },
+                        {
+                            "id": 9,
+                            "is_enabled": false
+                    },
+                        {
+                            "id": 10,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 11,
+                            "is_enabled": true
+                    }
+                ],
+                    "job_to_display": {
+                        "time": 10000,
+                        "msg1": "Hi WithDebtLimit",
+                        "msg2": "Balance: -2.00"
+                    }
+                }
+            },
+            "booking": {
+                "desc": "Booking Milk to User 111142",
+                "url": "/pi/addBooking",
+                "data": {
+                    "authenticated": "true",
+                    "user_id": 111142,
+                    "key": "111142A",
+                    "date": "2015-01-01 18:18:18",
+                    "item_code": 10
+                },
+                "result": {
+                    "time": 10000,
+                    "msg1": "Milk",
+                    "msg2": "Balance: -2.00"
+                }
+
+            }
+    },
+        {
+            "desc": "Authenticate And Booking N°8 Water",
+            "authentication": {
+                "desc": "Authentication User A",
+                "url": "/pi/authentication",
+                "data": {
+                    "key": "111142B",
+                    "date": "2015-01-01 19:19:19"
+                },
+                "result": {
+                    "authenticated": true,
+                    "authorized": true,
+                    "user_id": 111142,
+                    "enabled_products": [
+                        {
+                            "id": 1,
+                            "is_enabled": false
+                    },
+                        {
+                            "id": 2,
+                            "is_enabled": false
+                    },
+                        {
+                            "id": 5,
+                            "is_enabled": false
+                    },
+                        {
+                            "id": 6,
+                            "is_enabled": false
+                    },
+                        {
+                            "id": 8,
+                            "is_enabled": false
+                    },
+                        {
+                            "id": 9,
+                            "is_enabled": false
+                    },
+                        {
+                            "id": 10,
+                            "is_enabled": true
+                    },
+                        {
+                            "id": 11,
+                            "is_enabled": true
+                    }
+                ],
+                    "job_to_display": {
+                        "time": 10000,
+                        "msg1": "Hi WithDebtLimit",
+                        "msg2": "Balance: -2.00"
+                    }
+                }
+            },
+            "booking": {
+                "desc": "Booking Water to User 111142",
+                "url": "/pi/addBooking",
+                "data": {
+                    "authenticated": "true",
+                    "user_id": 111142,
+                    "key": "111142B",
+                    "date": "2015-01-01 19:19:19",
+                    "item_code": 11
+                },
+                "result": {
+                    "time": 10000,
+                    "msg1": "Water",
+                    "msg2": "Balance: -2.00"
+                }
+
+            }
+    }
+]
+}

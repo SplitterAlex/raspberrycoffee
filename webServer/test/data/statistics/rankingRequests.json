@@ -1,0 +1,167 @@
+[
+    {
+        "desc": "Get all time ranking list from users",
+        "url": "/statistics/rankings/users",
+        "queries": {
+            "fromYear": "",
+            "fromMonth": "",
+            "fromGroup": ""
+        },
+        "length": 10,
+        "result": [
+            { "rank": 1, "id": 111126, "total": 17 },
+            { "rank": 3, "id": 111124, "total": 14 },
+            { "rank": 6, "id": 111123, "total": 13 },
+            { "rank": 10, "id": 111132, "total": 9 }
+        ]
+    },
+    {
+        "desc": "Get ranking list 2015 from users",
+        "url": "/statistics/rankings/users",
+        "queries": {
+            "fromYear": "2015",
+            "fromMonth": "",
+            "fromGroup": ""
+        },
+        "length": 10,
+        "result": [
+            { "rank": 1, "id": 111126, "total": 17 },
+            { "rank": 3, "id": 111124, "total": 14 },
+            { "rank": 6, "id": 111123, "total": 13 },
+            { "rank": 10, "id": 111132, "total": 9 }
+        ]
+    },
+    {
+        "desc": "Get ranking list 2014 from users",
+        "url": "/statistics/rankings/users",
+        "queries": {
+            "fromYear": "2014",
+            "fromMonth": "",
+            "fromGroup": ""
+        },
+        "length": 0,
+        "result": [
+        ]
+    },
+    {
+        "desc": "Get ranking list 2015-06 from users",
+        "url": "/statistics/rankings/users",
+        "queries": {
+            "fromYear": "2015",
+            "fromMonth": "06",
+            "fromGroup": ""
+        },
+        "length": 10,
+        "result": [
+            { "rank": 1, "id": 111126, "total": 11 },
+            { "rank": 3, "id": 111125, "total": 9 },
+            { "rank": 6, "id": 111124, "total": 5 },
+            { "rank": 10, "id": 111130, "total": 2 }
+        ]
+    },
+    {
+        "desc": "Get ranking list 2015-01 from users",
+        "url": "/statistics/rankings/users",
+        "queries": {
+            "fromYear": "2015",
+            "fromMonth": "01",
+            "fromGroup": ""
+        },
+        "length": 0,
+        "result": [
+        ]
+    },
+    {
+        "desc": "Get all time ranking list from users in group 1",
+        "url": "/statistics/rankings/users",
+        "queries": {
+            "fromYear": "",
+            "fromMonth": "",
+            "fromGroup": "1"
+        },
+        "length": 10,
+        "result": [
+            { "rank": 1, "id": 111126, "total": 17 },
+            { "rank": 3, "id": 111124, "total": 14 },
+            { "rank": 6, "id": 111128, "total": 13 },
+            { "rank": 10, "id": 111121, "total": 6 }
+        ]
+    },
+    {
+        "desc": "Get  ranking list 2015 from users in group 1",
+        "url": "/statistics/rankings/users",
+        "queries": {
+            "fromYear": "2015",
+            "fromMonth": "",
+            "fromGroup": "1"
+        },
+        "length": 10,
+        "result": [
+            { "rank": 1, "id": 111126, "total": 17 },
+            { "rank": 3, "id": 111124, "total": 14 },
+            { "rank": 6, "id": 111128, "total": 13 },
+            { "rank": 10, "id": 111121, "total": 6 }
+        ]
+    },
+    {
+        "desc": "Get  ranking list 2015-07 from users in group 1",
+        "url": "/statistics/rankings/users",
+        "queries": {
+            "fromYear": "2015",
+            "fromMonth": "07",
+            "fromGroup": "1"
+        },
+        "length": 9,
+        "result": [
+            { "rank": 1, "id": 111129, "total": 6 },
+            { "rank": 3, "id": 111125, "total": 3 },
+            { "rank": 6, "id": 111123, "total": 1 },
+            { "rank": 9, "id": 111127, "total": 0 }
+        ]
+    },
+    {
+        "desc": "Get all time ranking list from groups",
+        "url": "/statistics/rankings/groups",
+        "queries": {
+            "fromYear": "",
+            "fromMonth": ""
+        },
+        "length": 10,
+        "result": [
+            { "rank": 1, "id": 9, "total": 28 },
+            { "rank": 3, "id": 2, "total": 26 },
+            { "rank": 6, "id": 3, "total": 18 },
+            { "rank": 10, "id": 11, "total": 11 }
+        ]
+    },
+    {
+        "desc": "Get ranking list from groups 2015",
+        "url": "/statistics/rankings/groups",
+        "queries": {
+            "fromYear": "2015",
+            "fromMonth": ""
+        },
+        "length": 10,
+        "result": [
+            { "rank": 1, "id": 9, "total": 28 },
+            { "rank": 3, "id": 2, "total": 26 },
+            { "rank": 6, "id": 3, "total": 18 },
+            { "rank": 10, "id": 11, "total": 11 }
+        ]
+    },
+    {
+        "desc": "Get ranking list from groups 2015-05",
+        "url": "/statistics/rankings/groups",
+        "queries": {
+            "fromYear": "2015",
+            "fromMonth": "05"
+        },
+        "length": 10,
+        "result": [
+            { "rank": 1, "id": 9, "total": 13 },
+            { "rank": 3, "id": 10, "total": 9 },
+            { "rank": 6, "id": 11, "total": 6 },
+            { "rank": 10, "id": 3, "total": 2 }
+        ]
+    }
+]
