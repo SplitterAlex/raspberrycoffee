@@ -1,5 +1,16 @@
 # raspberrycoffee
 
+## About
+
+Bachelor graduation project - Leopold-Franzens-Universität Innsbruck
+
+Software application wrote in AngularJS, Node.js and C. Used with a raspberry pi connected with a coffee machine.
+
+### Abstract
+
+Industrial interfaces are becoming increasingly common in household and kitchen appliances and allow the user to connect and communicate with the machines and extend their capabilities.
+This bachelor thesis describes the development of a web-based system to achieve the management of users of coffee machines. Only authorized users should gain access to use the coffee machine through NFC authorisation. All logged activities and generated datasets will be forwarded to a web server. In addition all obtained drinks work through an automated settlement system. Through a web based application a user can retrieve detailed and aggrevated statistics of their use with the coffee machine. Selected users will be able to administer the acquired datasets and user accounts on the system.
+
 ## License
 
 The MIT License (MIT) Copyright (c) 2015 Alexander Falch
